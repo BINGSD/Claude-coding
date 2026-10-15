@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Pure Maths Notes</title>
+  <meta name="claude:viewport-fit-sides" content="cover">
+  <meta name="description" content="A Level Pure Mathematics revision notes, key formulas, worked examples and practice questions with answers.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Caveat:wght@600&family=STIX+Two+Text:ital@0;1&display=swap">
+  <link rel="stylesheet" href="study.css">
+</head>
+<body style="--s: var(--pure);">
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html"><b>∂</b> A Level Maths Toolkit</a>
+    <nav aria-label="Main">
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="pure.html" aria-current="page">Pure</a></li>
+        <li><a href="statistics.html">Statistics</a></li>
+        <li><a href="mechanics.html">Mechanics</a></li>
+        <li><a href="formulas.html">Formula sheet</a></li>
+        <li><a href="exam.html">Exam skills</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="page-head">
+    <span class="label strand">Papers 1 &amp; 2 · about two-thirds of the marks</span>
+    <h1>Pure Mathematics</h1>
+    <p>Each topic has short notes, the formulas to know, a worked example and practice questions. Try each question first, then open the solution to check your method.</p>
+  </div>
+
+  <div class="layout">
+    <nav class="toc" aria-label="Topics">
+      <span class="label">Topics</span>
+      <ol>
+        <li><a href="#proof">Proof</a></li>
+        <li><a href="#algebra">Algebra &amp; quadratics</a></li>
+        <li><a href="#functions">Functions &amp; graphs</a></li>
+        <li><a href="#coordinates">Coordinate geometry</a></li>
+        <li><a href="#series">Sequences &amp; series</a></li>
+        <li><a href="#trig">Trigonometry</a></li>
+        <li><a href="#logs">Exponentials &amp; logs</a></li>
+        <li><a href="#differentiation">Differentiation</a></li>
+        <li><a href="#integration">Integration</a></li>
+        <li><a href="#numerical">Numerical methods</a></li>
+        <li><a href="#vectors">Vectors</a></li>
+      </ol>
+    </nav>
+
+    <div>
+      <!-- ============ 1. PROOF ============ -->
+      <article class="topic" id="proof">
+        <header class="topic-head"><h2>Proof</h2><span class="label">Year 1 + 2</span></header>
+        <section class="block">
+          <span class="label">Notes</span>
+          <ul class="notes">
+            <li><b>Deduction:</b> start from known facts and use logical steps to reach the statement.</li>
+            <li><b>Exhaustion:</b> split into a finite number of cases (e.g. <span class="m"><i>n</i></span> odd / <span class="m"><i>n</i></span> even) and prove every case.</li>
+            <li><b>Counter-example:</b> one example where the statement fails is enough to <em>disprove</em> it.</li>
+            <li><b>Contradiction:</b> assume the statement is false and show this leads to something impossible (e.g. √2 is irrational, there are infinitely many primes).</li>
+            <li>Use <span class="m">2<i>n</i></span> for any even number and <span class="m">2<i>n</i> + 1</span> for any odd number, where <span class="m"><i>n</i></span> is an integer.</li>
+          </ul>
+        </section>
+        <section class="block">
+          <div class="example">
+            <div class="q"><span class="label">Worked example</span>Prove that the sum of any three consecutive integers is a multiple of 3.</div>
+            <details>
+              <summary><span class="closed">Show solution</span><span class="open">Hide solution</span></summary>
+              <ol class="steps">
+                <li>Let the integers be <span class="m"><i>n</i>, <i>n</i> + 1, <i>n</i> + 2</span>, where <span class="m"><i>n</i></span> is an integer.</li>
+                <li>Sum: <span class="m"><i>n</i> + (<i>n</i> + 1) + (<i>n</i> + 2) = 3<i>n</i> + 3 = 3(<i>n</i> + 1)</span>.</li>
+                <li><span class="m"><i>n</i> + 1</span> is an integer, so the sum is 3 × an integer.</li>
+              </ol>
+              <span class="ans">The sum is a multiple of 3, as required.</span>
+            </details>
+          </div>
+        </section>
+        <section class="block">
+          <span class="label">Practice</span>
+          <ol class="practice">
+            <li>Disprove: “<span class="m"><i>n</i>² + <i>n</i> + 41</span> is prime for every positive integer <span class="m"><i>n</i></span>.” <span class="marks">[2 marks]</span>
+              <details><summary>Show answer</summary>
+                <p>Counter-example: <span class="m"><i>n</i> = 40</span> gives 1681 = 41², which is not prime.</p>
+                <p class="how">Any single value that fails is enough. <span class="m"><i>n</i> = 41</span> also works: 41(41 + 1 + 1) = 41 × 43.</p>
+              </details>
+            </li>
+            <li>Prove that <span class="m"><i>n</i>² − <i>n</i></span> is even for every integer <span class="m"><i>n</i></span>. <span class="marks">[3 marks]</span>
+              <details><summary>Show answer</summary>
+                <p><span class="m"><i>n</i>² − <i>n</i> = <i>n</i>(<i>n</i> − 1)</span>, a product of two consecutive integers.</p>
+                <p class="how">One of any two consecutive integers is even, so the product is even. (Or by exhaustion: try <span class="m"><i>n</i> = 2<i>k</i></span> and <span class="m"><i>n</i> = 2<i>k</i> + 1</span>.)</p>
+              </details>
+            </li>
+          </ol>
+        </section>
+        <section class="block">
+          <div class="watch"><span class="hand">Watch out!</span>
+            <p>Checking a few examples is <b>not</b> a proof. Always finish with a concluding sentence that repeats what you were asked to prove.</p>
+          </div>
+        </section>
+      </article>
+
+      <!-- ============ 2. ALGEBRA ============ -->
+      <article class="topic" id="algebra">
+        <header class="topic-head"><h2>Algebra &amp; quadratics</h2><span class="label">Year 1</span></header>
+        <section class="block">
+          <span class="label">Notes</span>
+          <ul class="notes">
+            <li>Laws of indices: <span class="m"><i>a<sup>m</sup></i> × <i>a<sup>n</sup></i> = <i>a</i><sup><i>m</i>+<i>n</i></sup></span>, <span class="m">(<i>a<sup>m</sup></i>)<sup><i>n</i></sup> = <i>a<sup>mn</sup></i></span>, <span class="m"><i>a</i><sup>−<i>n</i></sup> = 1/<i>a<sup>n</sup></i></span>, <span class="m"><i>a</i><sup>1/<i>n</i></sup> = ⁿ√<i>a</i></span>.</li>
+            <li>Rationalise a denominator <span class="m"><i>a</i> + √<i>b</i></span> by multiplying top and bottom by <span class="m"><i>a</i> − √<i>b</i></span>.</li>
+            <li>Completing the square turns <span class="m"><i>x</i>² + <i>bx</i> + <i>c</i></span> into <span class="m">(<i>x</i> + <i>b</i>/2)² − (<i>b</i>/2)² + <i>c</i></span>. This gives the turning point.</li>
+            <li>For quadratic inequalities, find the roots, <b>sketch</b> the curve, then read off the region.</li>
+            <li>The factor theorem: if <span class="m">f(<i>a</i>) = 0</span> then <span class="m">(<i>x</i> − <i>a</i>)</span> is a factor of <span class="m">f(<i>x</i>)</span>.</li>
+          </ul>
+        </section>
+        <section class="block">
+          <span class="label">Key formulas</span>
+          <ul class="formulas">
+            <li><span class="what">Quadratic formula</span>
+              <span class="hl"><math><mi>x</mi><mo>=</mo><mfrac><mrow><mo>−</mo><mi>b</mi><mo>±</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac></math></span></li>
+            <li><span class="what">Discriminant</span>
+              <span><span class="hl m"><i>b</i>² − 4<i>ac</i></span> &gt; 0 two real roots, = 0 one repeated root, &lt; 0 no real roots</span></li>
+            <li><span class="what">Difference of two squares</span><span class="hl m"><i>a</i>² − <i>b</i>² = (<i>a</i> + <i>b</i>)(<i>a</i> − <i>b</i>)</span></li>
+          </ul>
+        </section>
+        <section class="block">
+          <div class="example">
+            <div class="q"><span class="label">Worked example</span>Find the values of <span class="m"><i>k</i></span> for which <span class="m"><i>x</i>² + <i>kx</i> + 9 = 0</span> has no real roots.</div>
+            <details>
+              <summary><span class="closed">Show solution</span><span class="open">Hide solution</span></summary>
+              <ol class="steps">
+                <li>No real roots means <span class="m"><i>b</i>² − 4<i>ac</i> &lt; 0</span>.</li>
+                <li>Here <span class="m"><i>a</i> = 1, <i>b</i> = <i>k</i>, <i>c</i> = 9</span>, so <span class="m"><i>k</i>² − 36 &lt; 0</span>.</li>
+                <li>Critical values <span class="m"><i>k</i> = ±6</span>. The graph of <span class="m"><i>k</i>² − 36</span> is a ∪ shape, negative between the roots.</li>
+              </ol>
+              <span class="ans">−6 &lt; k &lt; 6</span>
+            </details>
+          </div>
+        </section>
+        <section class="block">
+          <span class="label">Practice</span>
+          <ol class="practice">
+            <li>Rationalise <math><mfrac><mn>6</mn><mrow><mn>3</mn><mo>−</mo><msqrt><mn>3</mn></msqrt></mrow></mfrac></math>, giving your answer in its simplest form. <span class="marks">[3 marks]</span>
+              <details><summary>Show answer</summary>
+                <p>3 + √3</p>
+                <p class="how">Multiply by (3 + √3)/(3 + √3): 6(3 + √3)/(9 − 3) = 6(3 + √3)/6.</p>
+              </details>
+            </li>
+            <li>Write <span class="m"><i>x</i>² − 8<i>x</i> + 3</span> in the form <span class="m">(<i>x</i> + <i>p</i>)² + <i>q</i></span> and state the minimum point of the curve. <span class="marks">[3 marks]</span>
+              <details><summary>Show answer</summary>
+                <p>(x − 4)² − 13, minimum point (4, −13)</p>
+                <p class="how">Halve −8 to get −4, then subtract (−4)² = 16: 3 − 16 = −13.</p>
+              </details>
+            </li>
+          </ol>
+        </section>
+        <section class="block">
+          <div class="watch"><span class="hand">Watch out!</span>
+            <p>Multiplying or dividing an inequality by a negative number reverses the sign. And never divide both sides by <span class="m"><i>x</i></span>: you might lose a solution or divide by zero.</p>
+          </div>
+        </section>
+      </article>
+
+      <!-- ============ 3. FUNCTIONS ============ -->
+      <article class="topic" id="functions">
+        <header class="topic-head"><h2>Functions &amp; graphs</h2><span class="label">Year 1 + 2</span></header>
+        <section class="block">
+          <span class="label">Notes</span>
+          <ul class="notes">
+            <li>A <b>function</b> maps each input to exactly one output. The set of inputs is the <b>domain</b>; the outputs form the <b>range</b>.</li>
+            <li><span class="m">fg(<i>x</i>) = f(g(<i>x</i>))</span>: apply g first, then f.</li>
+            <li><span class="m">f<sup>−1</sup></span> exists only if f is one-to-one. Its graph is the reflection of <span class="m"><i>y</i> = f(<i>x</i>)</span> in <span class="m"><i>y</i> = <i>x</i></span>. The domain of <span class="m">f<sup>−1</sup></span> is the range of f.</li>
+            <li><span class="m">|f(<i>x</i>)|</span> reflects the parts below the <span class="m"><i>x</i></span>-axis upwards; <span class="m">f(|<i>x</i>|)</span> reflects the right-hand half in the <span class="m"><i>y</i></span>-axis.</li>
+          </ul>
+        </section>
+        <section class="block">
+          <span class="label">Key formulas · graph transformations</span>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Transformation</th><th>Effect on the graph</th><th>Point (x, y) becomes</th></tr></thead>
+              <tbody>
+                <tr><td><span class="m"><i>y</i> = f(<i>x</i>) + <i>a</i></span></td><td>translate up by <span class="m"><i>a</i></span></td><td class="m">(<i>x</i>, <i>y</i> + <i>a</i>)</td></tr>
+                <tr><td><span class="m"><i>y</i> = f(<i>x</i> + <i>a</i>)</span></td><td>translate <b>left</b> by <span class="m"><i>a</i></span></td><td class="m">(<i>x</i> − <i>a</i>, <i>y</i>)</td></tr>
+                <tr><td><span class="m"><i>y</i> = <i>a</i>f(<i>x</i>)</span></td><td>vertical stretch, scale factor <span class="m"><i>a</i></span></td><td class="m">(<i>x</i>, <i>ay</i>)</td></tr>
+                <tr><td><span class="m"><i>y</i> = f(<i>ax</i>)</span></td><td>horizontal stretch, scale factor <span class="m">1/<i>a</i></span></td><td class="m">(<i>x</i>/<i>a</i>, <i>y</i>)</td></tr>
+                <tr><td><span class="m"><i>y</i> = −f(<i>x</i>)</span></td><td>reflect in the <span class="m"><i>x</i></span>-axis</td><td class="m">(<i>x</i>, −<i>y</i>)</td></tr>
+                <tr><td><span class="m"><i>y</i> = f(−<i>x</i>)</span></td><td>reflect in the <span class="m"><i>y</i></span>-axis</td><td class="m">(−<i>x</i>, <i>y</i>)</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section class="block">
+          <div class="example">
+            <div class="q"><span class="label">Worked example</span>f(x) = 2x + 1 and g(x) = x². Find fg(3), gf(3) and f<sup>−1</sup>(x).</div>
+            <details>
+              <summary><span class="closed">Show solution</span><span class="open">Hide solution</span></summary>
+              <ol class="steps">
+                <li><span class="m">fg(3) = f(g(3)) = f(9) = 2(9) + 1 = 19</span>.</li>
+                <li><span class="m">gf(3) = g(f(3)) = g(7) = 49</span>. Note fg ≠ gf.</li>
+                <li>For the inverse, write <span class="m"><i>y</i> = 2<i>x</i> + 1</span> and rearrange: <span class="m"><i>x</i> = (<i>y</i> − 1)/2</span>.</li>
+              </ol>
+              <span class="ans">fg(3) = 19, gf(3) = 49, f⁻¹(x) = (x − 1)/2</span>
+            </details>
+          </div>
+        </section>
+        <section class="block">
+          <span class="label">Practice</span>
+          <ol class="practice">
+            <li><span class="m"><i>y</i> = f(<i>x</i>)</span> has a maximum at (2, 5). Find the maximum of (a) <span class="m"><i>y</i> = f(<i>x</i> − 3)</span> (b) <span class="m"><i>y</i> = 3f(<i>x</i>)</span> (c) <span class="m"><i>y</i> = f(2<i>x</i>)</span>. <span class="marks">[3 marks]</span>
+              <details><summary>Show answer</summary>
+                <p>(a) (5, 5) &nbsp; (b) (2, 15) &nbsp; (c) (1, 5)</p>
+                <p class="how">f(x − 3) moves right 3; 3f(x) multiplies y by 3; f(2x) halves x.</p>
+              </details>
+            </li>
+            <li>Solve <span class="m">|2<i>x</i> − 3| = 5</span>. <span class="marks">[2 marks]</span>
+              <details><summary>Show answer</summary>
+                <p>x = 4 or x = −1</p>
+                <p class="how">Solve 2x − 3 = 5 and 2x − 3 = −5.</p>
+              </details>
+            </li>
+          </ol>
+        </section>
+        <section class="block">
+          <div class="watch"><span class="hand">Watch out!</span>
+            <p>Changes inside the bracket do the opposite of what you expect: <span class="m">f(<i>x</i> + 2)</span> moves the graph 2 to the <b>left</b>, and <span class="m">f(2<i>x</i>)</span> <b>halves</b> the <span class="m"><i>x</i></span>-coordinates.</p>
+          </div>
+        </section>
+      </article>
+
+      <!-- ============ 4. COORDINATE GEOMETRY ============ -->
+      <article class="topic" id="coordinates">
+        <header class="topic-head"><h2>Coordinate geometry</h2><span class="label">Year 1 + 2</span></header>
+        <section class="block">
+          <span class="label">Notes</span>
+          <ul class="notes">
+            <li>Parallel lines have equal gradients. Perpendicular gradients multiply to −1.</li>
+            <li>A tangent to a circle is perpendicular to the radius at that point.</li>
+            <li>The perpendicular bisector of a chord passes through the centre of the circle.</li>
+            <li>An angle in a semicircle is a right angle.</li>
+            <li>Parametric equations give <span class="m"><i>x</i></span> and <span class="m"><i>y</i></span> in terms of a parameter <span class="m"><i>t</i></span>. Eliminate <span class="m"><i>t</i></span> to find the Cartesian equation.</li>
+          </ul>
+        </section>
+        <section class="block">
+          <span class="label">Key formulas</span>
+          <ul class="formulas">
+            <li><span class="what">Gradient</span><span class="hl"><math><mi>m</mi><mo>=</mo><mfrac><mrow><msub><mi>y</mi><mn>2</mn></msub><mo>−</mo><msub><mi>y</mi><mn>1</mn></msub></mrow><mrow><msub><mi>x</mi><mn>2</mn></msub><mo>−</mo><msub><mi>x</mi><mn>1</mn></msub></mrow></mfrac></math></span></li>
+            <li><span class="what">Straight line</span><span class="hl m"><i>y</i> − <i>y</i><sub>1</sub> = <i>m</i>(<i>x</i> − <i>x</i><sub>1</sub>)</span></li>
+            <li><span class="what">Perpendicular</span><span class="hl m"><i>m</i><sub>1</sub> × <i>m</i><sub>2</sub> = −1</span></li>
+            <li><span class="what">Distance</span><span class="hl"><math><mi>d</mi><mo>=</mo><msqrt><mrow><mo>(</mo><msub><mi>x</mi><mn>2</mn></msub><mo>−</mo><msub><mi>x</mi><mn>1</mn></msub><msup><mo>)</mo><mn>2</mn></msup><mo>+</mo><mo>(</mo><msub><mi>y</mi><mn>2</mn></msub><mo>−</mo><msub><mi>y</mi><mn>1</mn></msub><msup><mo>)</mo><mn>2</mn></msup></mrow></msqrt></math></span></li>
+            <li><span class="what">Circle, centre (a, b)</span><span class="hl m">(<i>x</i> − <i>a</i>)² + (<i>y</i> − <i>b</i>)² = <i>r</i>²</span></li>
+          </ul>
+        </section>
+        <section class="block">
+          <div class="example">
+            <div class="q"><span class="label">Worked example</span>Find the centre and radius of the circle <span class="m"><i>x</i>² + <i>y</i>² − 6<i>x</i> + 4<i>y</i> − 12 = 0</span>.</div>
+            <details>
+              <summary><span class="closed">Show solution</span><span class="open">Hide solution</span></summary>
+              <ol class="steps">
+                <li>Complete the square in <span class="m"><i>x</i></span>: <span class="m"><i>x</i>² − 6<i>x</i> = (<i>x</i> − 3)² − 9</span>.</li>
+                <li>Complete the square in <span class="m"><i>y</i></span>: <span class="m"><i>y</i>² + 4<i>y</i> = (<i>y</i> + 2)² − 4</span>.</li>
+                <li>So <span class="m">(<i>x</i> − 3)² + (<i>y</i> + 2)² − 9 − 4 − 12 = 0</span>, giving <span class="m">(<i>x</i> − 3)² + (<i>y</i> + 2)² = 25</span>.</li>
+              </ol>
+              <span class="ans">Centre (3, −2), radius 5</span>
+            </details>
+          </div>
+        </section>
+        <section class="block">
+          <span class="label">Practice</span>
+          <ol class="practice">
+            <li>Find the equation of the line through (2, −1) that is perpendicular to <span class="m"><i>y</i> = 4<i>x</i> + 3</span>. Give it in the form <span class="m"><i>ax</i> + <i>by</i> + <i>c</i> = 0</span>. <span class="marks">[3 marks]</span>
+              <details><summary>Show answer</summary>
+                <p>x + 4y + 2 = 0</p>
+                <p class="how">Gradient −¼, so y + 1 = −¼(x − 2). Multiply by 4: 4y + 4 = −x + 2.</p>
+              </details>
+            </li>
+            <li>Find the equation of the tangent to <span class="m">(<i>x</i> − 1)² + (<i>y</i> − 2)² = 10</span> at the point (4, 3). <span class="marks">[4 marks]</span>
+              <details><summary>Show answer</summary>
+                <p>y = −3x + 15</p>
+                <p class="how">Radius gradient from (1, 2) to (4, 3) is 1/3, so the tangent gradient is −3. Then y − 3 = −3(x − 4).</p>
+              </details>
+            </li>
+          </ol>
+        </section>
+        <section class="block">
+          <div class="watch"><span class="hand">Watch out!</span>
+            <p>Signs flip in the circle equation: <span class="m">(<i>x</i> + 2)²</span> means the centre has <span class="m"><i>x</i></span>-coordinate <b>−2</b>. Also, the equation gives <span class="m"><i>r</i>²</span>, so take the square root.</p>
+          </div>
+        </section>
+      </article>
+
+      <!-- ============ 5. SERIES ============ -->
+      <article class="topic" id="series">
+        <header class="topic-head"><h2>Sequences &amp; series</h2><span class="label">Year 1 + 2</span></header>
+        <section class="block">
+          <span class="label">Notes</span>
+          <ul class="notes">
+            <li><b>Arithmetic:</b> add the common difference <span class="m"><i>d</i></span> each time. <b>Geometric:</b> multiply by the common ratio <span class="m"><i>r</i></span>.</li>
+            <li>A geometric series converges (has a sum to infinity) only when <span class="m">|<i>r</i>| &lt; 1</span>.</li>
+            <li>Sigma notation: <span class="m">Σ<sub><i>r</i>=1</sub><sup><i>n</i></sup></span> means add the terms for <span class="m"><i>r</i> = 1, 2, …, <i>n</i></span>.</li>
+            <li>The binomial expansion of <span class="m">(1 + <i>x</i>)<sup><i>n</i></sup></span> for negative or fractional <span class="m"><i>n</i></span> is infinite and valid only for <span class="m">|<i>x</i>| &lt; 1</span>.</li>
+          </ul>
+        </section>
+        <section class="block">
+          <span class="label">Key formulas</span>
+          <ul class="formulas">
+            <li><span class="what">Arithmetic nth term</span><span class="hl m"><i>u<sub>n</sub></i> = <i>a</i> + (<i>n</i> − 1)<i>d</i></span></li>
+            <li><span class="what">Arithmetic sum</span><span class="hl"><math><msub><mi>S</mi><mi>n</mi></msub><mo>=</mo><mfrac><mi>n</mi><mn>2</mn></mfrac><mo>(</mo><mn>2</mn><mi>a</mi><mo>+</mo><mo>(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo>)</mo><mi>d</mi><mo>)</mo></math></span></li>
+            <li><span class="what">Geometric nth term</span><span class="hl m"><i>u<sub>n</sub></i> = <i>ar</i><sup><i>n</i>−1</sup></span></li>
+            <li><span class="what">Geometric sum</span><span class="hl"><math><msub><mi>S</mi><mi>n</mi></msub><mo>=</mo><mfrac><mrow><mi>a</mi><mo>(</mo><mn>1</mn><mo>−</mo><msup><mi>r</mi><mi>n</mi></msup><mo>)</mo></mrow><mrow><mn>1</mn><mo>−</mo><mi>r</mi></mrow></mfrac></math></span></li>
+            <li><span class="what">Sum to infinity</span><span class="hl"><math><msub><mi>S</mi><mi>∞</mi></msub><mo>=</mo><mfrac><mi>a</mi><mrow><mn>1</mn><mo>−</mo><mi>r</mi></mrow></mfrac><mo>,</mo><mspace width="0.5em"></mspace><mo>|</mo><mi>r</mi><mo>|</mo><mo>&lt;</mo><mn>1</mn></math></span></li>
+            <li><span class="what">Binomial (any n)</span><span class="hl"><math><msup><mrow><mo>(</mo><mn>1</mn><mo>+</mo><mi>x</mi><mo>)</mo></mrow><mi>n</mi></msup><mo>=</mo><mn>1</mn><mo>+</mo><mi>n</mi><mi>x</mi><mo>+</mo><mfrac><mrow><mi>n</mi><mo>(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo>)</mo></mrow><mrow><mn>2</mn><mo>!</mo></mrow></mfrac><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mo>⋯</mo></math></span></li>
+          </ul>
+        </section>
+        <section class="block">
+          <div class="example">
+            <div class="q"><span class="label">Worked example</span>A geometric series has second term 12 and fifth term 1.5. Find the sum to infinity.</div>
+            <details>
+              <summary><span class="closed">Show solution</span><span class="open">Hide solution</span></summary>
+              <ol class="steps">
+                <li><span class="m"><i>ar</i> = 12</span> and <span class="m"><i>ar</i><sup>4</sup> = 1.5</span>.</li>
+                <li>Divide: <span class="m"><i>r</i>³ = 1.5 ÷ 12 = 0.125</span>, so <span class="m"><i>r</i> = 0.5</span>.</li>
+                <li>Then <span class="m"><i>a</i> = 12 ÷ 0.5 = 24</span>. Since |r| &lt; 1 the sum to infinity exists.</li>
+                <li><span class="m"><i>S</i><sub>∞</sub> = 24 ÷ (1 − 0.5)</span>.</li>
+              </ol>
+              <span class="ans">S∞ = 48</span>
+            </details>
+          </div>
+        </section>
+        <section class="block">
+          <span class="label">Practice</span>
+          <ol class="practice">
+            <li>An arithmetic series has first term 5 and common difference 3. Find the sum of the first 20 terms. <span class="marks">[2 marks]</span>
+              <details><summary>Show answer</summary>
+                <p>670</p>
+                <p class="how">S₂₀ = 20/2 × (2 × 5 + 19 × 3) = 10 × 67.</p>
+              </details>
+            </li>
+            <li>Expand <span class="m">(1 + 2<i>x</i>)<sup>−1</sup></span> up to the term in <span class="m"><i>x</i>³</span> and state the values of <span class="m"><i>x</i></span> for which it is valid. <span class="marks">[4 marks]</span>
+              <details><summary>Show answer</summary>
+                <p>1 − 2x + 4x² − 8x³, valid for |x| &lt; ½</p>
+                <p class="how">Use n = −1 with 2x in place of x. Valid when |2x| &lt; 1.</p>
+              </details>
+            </li>
+          </ol>
+        </section>
+        <section class="block">
+          <div class="watch"><span class="hand">Watch out!</span>
+            <p>When you replace <span class="m"><i>x</i></span> with <span class="m">2<i>x</i></span> in a binomial expansion, the whole term is cubed: <span class="m">(2<i>x</i>)³ = 8<i>x</i>³</span>, <span class="wrong">not 2<i>x</i>³</span>.</p>
+          </div>
+        </section>
+      </article>
+
+      <!-- ============ 6. TRIG ============ -->
+      <article class="topic" id="trig">
+        <header class="topic-head"><h2>Trigonometry</h2><span class="label">Year 1 + 2</span></header>
+        <section class="block">
+          <span class="label">Notes</span>
+          <ul class="notes">
+            <li><span class="m">π</span> radians = 180°. Use radians for all calculus with trig functions.</li>
+            <li><span class="m">sec <i>x</i> = 1/cos <i>x</i></span>, <span class="m">cosec <i>x</i> = 1/sin <i>x</i></span>, <span class="m">cot <i>x</i> = 1/tan <i>x</i></span>.</li>
+            <li>To solve trig equations, find the calculator value, then use the graph or CAST diagram to find every solution in the interval.</li>
+            <li><span class="m"><i>a</i> sin <i>x</i> + <i>b</i> cos <i>x</i></span> can be written as <span class="m"><i>R</i> sin(<i>x</i> + α)</span> with <span class="m"><i>R</i> = √(<i>a</i>² + <i>b</i>²)</span> and <span class="m">tan α = <i>b</i>/<i>a</i></span>.</li>
+            <li>Small angles (in radians): <span class="m">sin θ ≈ θ</span>, <span class="m">tan θ ≈ θ</span>, <span class="m">cos θ ≈ 1 − θ²/2</span>.</li>
+          </ul>
+        </section>
+        <section class="block">
+          <span class="label">Key formulas</span>
+          <ul class="formulas">
+            <li><span class="what">Arc length</span><span class="hl m"><i>s</i> = <i>r</i>θ</span></li>
+            <li><span class="what">Sector area</span><span class="hl m"><i>A</i> = ½<i>r</i>²θ</span></li>
+            <li><span class="what">Pythagorean identities</span><span class="hl m">sin²<i>x</i> + cos²<i>x</i> = 1</span><span class="hl m">1 + tan²<i>x</i> = sec²<i>x</i></span><span class="hl m">1 + cot²<i>x</i> = cosec²<i>x</i></span></li>
+            <li><span class="what">Double angle (sin)</span><span class="hl m">sin 2<i>A</i> = 2 sin <i>A</i> cos <i>A</i></span></li>
+            <li><span class="what">Double angle (cos)</span><span class="hl m">cos 2<i>A</i> = cos²<i>A</i> − sin²<i>A</i> = 2cos²<i>A</i> − 1 = 1 − 2sin²<i>A</i></span></li>
+            <li><span class="what">Compound angle</span><span class="hl m">sin(<i>A</i> ± <i>B</i>) = sin <i>A</i> cos <i>B</i> ± cos <i>A</i> sin <i>B</i></span></li>
+          </ul>
+        </section>
+        <section class="block">
+          <div class="example">
+            <div class="q"><span class="label">Worked example</span>Solve <span class="m">2cos²<i>x</i> − sin <i>x</i> − 1 = 0</span> for 0° ≤ x &lt; 360°.</div>
+            <details>
+              <summary><span class="closed">Show solution</span><span class="open">Hide solution</span></summary>
+              <ol class="steps">
+                <li>Replace <span class="m">cos²<i>x</i></span> with <span class="m">1 − sin²<i>x</i></span>: <span class="m">2 − 2sin²<i>x</i> − sin <i>x</i> − 1 = 0</span>.</li>
+                <li>Rearrange: <span class="m">2sin²<i>x</i> + sin <i>x</i> − 1 = 0</span>, which factorises to <span class="m">(2 sin <i>x</i> − 1)(sin <i>x</i> + 1) = 0</span>.</li>
+                <li><span class="m">sin <i>x</i> = ½</span> gives <span class="m"><i>x</i> = 30°</span> or <span class="m">180° − 30° = 150°</span>.</li>
+                <li><span class="m">sin <i>x</i> = −1</span> gives <span class="m"><i>x</i> = 270°</span>.</li>
+              </ol>
+              <span class="ans">x = 30°, 150°, 270°</span>
+            </details>
+          </div>
+        </section>
+        <section class="block">
+          <span class="label">Practice</span>
+          <ol class="practice">
+            <li>A sector has radius 6 cm and angle 0.8 radians. Find its arc length and area. <span class="marks">[2 marks]</span>
+              <details><summary>Show answer</summary>
+                <p>Arc 4.8 cm, area 14.4 cm²</p>
+                <p class="how">s = 6 × 0.8; A = ½ × 36 × 0.8.</p>
+              </details>
+            </li>
+            <li>Write <span class="m">3 sin <i>x</i> + 4 cos <i>x</i></span> in the form <span class="m"><i>R</i> sin(<i>x</i> + α)</span>, with 0 &lt; α &lt; 90°. State the maximum value. <span class="marks">[4 marks]</span>
+              <details><summary>Show answer</summary>
+                <p>5 sin(x + 53.1°), maximum 5</p>
+                <p class="how">R cos α = 3 and R sin α = 4, so R = √(9 + 16) = 5 and tan α = 4/3.</p>
+              </details>
+            </li>
+          </ol>
+        </section>
+        <section class="block">
+          <div class="watch"><span class="hand">Watch out!</span>
+            <p>Check your calculator is in the right mode (degrees or radians) before every trig question. A calculator gives only one solution; there are usually more in the interval.</p>
+          </div>
+        </section>
+      </article>
+
+      <!-- ============ 7. LOGS ============ -->
+      <article class="topic" id="logs">
+        <header class="topic-head"><h2>Exponentials &amp; logarithms</h2><span class="label">Year 1</span></header>
+        <section class="block">
+          <span class="label">Notes</span>
+          <ul class="notes">
+            <li><span class="m">log<sub><i>a</i></sub> <i>x</i> = <i>n</i></span> means <span class="m"><i>a<sup>n</sup></i> = <i>x</i></span>. <span class="m">ln</span> is <span class="m">log<sub>e</sub></span>, the inverse of <span class="m">e<sup><i>x</i></sup></span>.</li>
+            <li>The gradient of <span class="m"><i>y</i> = e<sup><i>kx</i></sup></span> is <span class="m"><i>k</i>e<sup><i>kx</i></sup></span>: proportional to the value itself, which is why it models growth and decay.</li>
+            <li>For a model <span class="m"><i>y</i> = <i>ab<sup>x</sup></i></span>, plotting <span class="m">log <i>y</i></span> against <span class="m"><i>x</i></span> gives a straight line with gradient <span class="m">log <i>b</i></span> and intercept <span class="m">log <i>a</i></span>.</li>
+            <li>For <span class="m"><i>y</i> = <i>ax<sup>n</sup></i></span>, plot <span class="m">log <i>y</i></span> against <span class="m">log <i>x</i></span>: gradient <span class="m"><i>n</i></span>, intercept <span class="m">log <i>a</i></span>.</li>
+          </ul>
+        </section>
+        <section class="block">
+          <span class="label">Key formulas</span>
+          <ul class="formulas">
+            <li><span class="what">Product law</span><span class="hl m">log <i>xy</i> = log <i>x</i> + log <i>y</i></span></li>
+            <li><span class="what">Quotient law</span><span class="hl m">log (<i>x</i>/<i>y</i>) = log <i>x</i> − log <i>y</i></span></li>
+            <li><span class="what">Power law</span><span class="hl m">log <i>x<sup>k</sup></i> = <i>k</i> log <i>x</i></span></li>
+            <li><span class="what">Special values</span><span class="hl m">log<sub><i>a</i></sub> <i>a</i> = 1, &nbsp;log<sub><i>a</i></sub> 1 = 0, &nbsp;e<sup>ln <i>x</i></sup> = <i>x</i></span></li>
+          </ul>
+        </section>
+        <section class="block">
+          <div class="example">
+            <div class="q"><span class="label">Worked example</span>Solve <span class="m">3<sup>2<i>x</i></sup> − 10(3<sup><i>x</i></sup>) + 9 = 0</span>.</div>
+            <details>
+              <summary><span class="closed">Show solution</span><span class="open">Hide solution</span></summary>
+              <ol class="steps">
+                <li>Notice <span class="m">3<sup>2<i>x</i></sup> = (3<sup><i>x</i></sup>)²</span>. Let <span class="m"><i>y</i> = 3<sup><i>x</i></sup></span>.</li>
+                <li><span class="m"><i>y</i>² − 10<i>y</i> + 9 = 0</span> factorises to <span class="m">(<i>y</i> − 1)(<i>y</i> − 9) = 0</span>.</li>
+                <li><span class="m">3<sup><i>x</i></sup> = 1</span> gives <span class="m"><i>x</i> = 0</span>; <span class="m">3<sup><i>x</i></sup> = 9</span> gives <span class="m"><i>x</i> = 2</span>.</li>
+              </ol>
+              <span class="ans">x = 0 or x = 2</span>
+            </details>
+          </div>
+        </section>
+        <section class="block">
+          <span class="label">Practice</span>
+          <ol class="practice">
+            <li>Solve <span class="m">5<sup><i>x</i></sup> = 20</span>, giving your answer to 3 decimal places. <span class="marks">[2 marks]</span>
+              <details><summary>Show answer</summary>
+                <p>x = 1.861</p>
+                <p class="how">Take logs: x ln 5 = ln 20, so x = ln 20 ÷ ln 5.</p>
+              </details>
+            </li>
+            <li>A population is modelled by <span class="m"><i>P</i> = 200e<sup>0.03<i>t</i></sup></span>, where <span class="m"><i>t</i></span> is in years. Find when the population first reaches 500. <span class="marks">[3 marks]</span>
+              <details><summary>Show answer</summary>
+                <p>t = 30.5 years (3 s.f.)</p>
+                <p class="how">e^(0.03t) = 2.5, so 0.03t = ln 2.5 and t = 0.9163 ÷ 0.03 = 30.54.</p>
+              </details>
+            </li>
+          </ol>
+        </section>
+        <section class="block">
+          <div class="watch"><span class="hand">Watch out!</span>
+            <p><span class="m wrong">log(<i>a</i> + <i>b</i>) = log <i>a</i> + log <i>b</i></span> is false. The product law only works for <span class="m">log(<i>ab</i>)</span>.</p>
+          </div>
+        </section>
+      </article>
+
+      <!-- ============ 8. DIFFERENTIATION ============ -->
+      <article class="topic" id="differentiation">
+        <header class="topic-head"><h2>Differentiation</h2><span class="label">Year 1 + 2</span></header>
+        <section class="block">
+          <span class="label">Notes</span>
+          <ul class="notes">
+            <li><span class="m">d<i>y</i>/d<i>x</i></span> is the gradient of the curve. At a <b>stationary point</b>, <span class="m">d<i>y</i>/d<i>x</i> = 0</span>.</li>
+            <li>Second derivative test: <span class="m">d²<i>y</i>/d<i>x</i>² &gt; 0</span> minimum, <span class="m">&lt; 0</span> maximum. If it equals 0, check the gradient either side.</li>
+            <li>Tangent gradient = <span class="m"><i>m</i></span>; normal gradient = <span class="m">−1/<i>m</i></span>.</li>
+            <li>Implicit: differentiate <span class="m"><i>y</i></span> terms and multiply by <span class="m">d<i>y</i>/d<i>x</i></span>. Parametric: <span class="m">d<i>y</i>/d<i>x</i> = (d<i>y</i>/d<i>t</i>) ÷ (d<i>x</i>/d<i>t</i>)</span>.</li>
+            <li>A curve is <b>convex</b> where <span class="m">f″(<i>x</i>) &gt; 0</span>, <b>concave</b> where <span class="m">f″(<i>x</i>) &lt; 0</span>; a point of inflection is where it changes.</li>
+          </ul>
+        </section>
+        <section class="block">
+          <span class="label">Key formulas</span>
+          <ul class="formulas">
+            <li><span class="what">Powers</span><span class="hl m">d/d<i>x</i> (<i>x<sup>n</sup></i>) = <i>nx</i><sup><i>n</i>−1</sup></span></li>
+            <li><span class="what">Exponentials &amp; logs</span><span class="hl m">e<sup><i>kx</i></sup> → <i>k</i>e<sup><i>kx</i></sup></span><span class="hl m">ln <i>x</i> → 1/<i>x</i></span></li>
+            <li><span class="what">Trig (radians)</span><span class="hl m">sin <i>kx</i> → <i>k</i> cos <i>kx</i></span><span class="hl m">cos <i>kx</i> → −<i>k</i> sin <i>kx</i></span></li>
+            <li><span class="what">Chain rule</span><span class="hl"><math><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>u</mi></mrow></mfrac><mo>×</mo><mfrac><mrow><mi>d</mi><mi>u</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac></math></span></li>
+            <li><span class="what">Product rule</span><span class="hl m">(<i>uv</i>)′ = <i>uv</i>′ + <i>vu</i>′</span></li>
+            <li><span class="what">Quotient rule</span><span class="hl"><math><msup><mrow><mo>(</mo><mfrac><mi>u</mi><mi>v</mi></mfrac><mo>)</mo></mrow><mo>′</mo></msup><mo>=</mo><mfrac><mrow><mi>v</mi><msup><mi>u</mi><mo>′</mo></msup><mo>−</mo><mi>u</mi><msup><mi>v</mi><mo>′</mo></msup></mrow><msup><mi>v</mi><mn>2</mn></msup></mfrac></math></span></li>
+          </ul>
+        </section>
+        <section class="block">
+          <div class="example">
+            <div class="q"><span class="label">Worked example</span>Find and classify the stationary points of <span class="m"><i>y</i> = <i>x</i>³ − 3<i>x</i>² − 9<i>x</i> + 5</span>.</div>
+            <details>
+              <summary><span class="closed">Show solution</span><span class="open">Hide solution</span></summary>
+              <ol class="steps">
+                <li><span class="m">d<i>y</i>/d<i>x</i> = 3<i>x</i>² − 6<i>x</i> − 9 = 3(<i>x</i> − 3)(<i>x</i> + 1)</span>.</li>
+                <li>Set equal to 0: <span class="m"><i>x</i> = 3</span> or <span class="m"><i>x</i> = −1</span>.</li>
+                <li><span class="m"><i>y</i>(3) = 27 − 27 − 27 + 5 = −22</span> and <span class="m"><i>y</i>(−1) = −1 − 3 + 9 + 5 = 10</span>.</li>
+                <li><span class="m">d²<i>y</i>/d<i>x</i>² = 6<i>x</i> − 6</span>. At <span class="m"><i>x</i> = 3</span>: 12 &gt; 0, minimum. At <span class="m"><i>x</i> = −1</span>: −12 &lt; 0, maximum.</li>
+              </ol>
+              <span class="ans">Maximum (−1, 10), minimum (3, −22)</span>
+            </details>
+          </div>
+        </section>
+        <section class="block">
+          <span class="label">Practice</span>
+          <ol class="practice">
+            <li>Differentiate <span class="m"><i>y</i> = <i>x</i>²e<sup>3<i>x</i></sup></span>. <span class="marks">[3 marks]</span>
+              <details><summary>Show answer</summary>
+                <p>dy/dx = xe^(3x)(2 + 3x)</p>
+                <p class="how">Product rule: 2x·e^(3x) + x²·3e^(3x), then factorise.</p>
+              </details>
+            </li>
+            <li>Find the gradient of the curve <span class="m"><i>x</i>² + <i>y</i>² = 25</span> at the point (3, 4). <span class="marks">[3 marks]</span>
+              <details><summary>Show answer</summary>
+                <p>−3/4</p>
+                <p class="how">Implicitly: 2x + 2y(dy/dx) = 0, so dy/dx = −x/y = −3/4.</p>
+              </details>
+            </li>
+          </ol>
+        </section>
+        <section class="block">
+          <div class="watch"><span class="hand">Watch out!</span>
+            <p>Don't forget the chain-rule factor: d/dx (sin 3<i>x</i>) = <b>3</b> cos 3<i>x</i>, <span class="wrong">not cos 3<i>x</i></span>.</p>
+          </div>
+        </section>
+      </article>
+
+      <!-- ============ 9. INTEGRATION ============ -->
+      <article class="topic" id="integration">
+        <header class="topic-head"><h2>Integration</h2><span class="label">Year 1 + 2</span></header>
+        <section class="block">
+          <span class="label">Notes</span>
+          <ul class="notes">
+            <li>Integration reverses differentiation. Always add <span class="m">+ <i>c</i></span> to an indefinite integral.</li>
+            <li>A definite integral gives the signed area between the curve and the <span class="m"><i>x</i></span>-axis. Area below the axis comes out negative, so split the integral at the roots.</li>
+            <li>Choose a method: <b>reverse chain rule</b> (spot <span class="m">f′(<i>x</i>)/f(<i>x</i>)</span> etc.), <b>substitution</b>, <b>by parts</b> (product of two different types), or <b>partial fractions</b> (rational functions).</li>
+            <li>For <b>by parts</b>, let <span class="m"><i>u</i></span> be the part that gets simpler when differentiated (usually the polynomial; but if there's a <span class="m">ln <i>x</i></span>, let <span class="m"><i>u</i> = ln <i>x</i></span>).</li>
+            <li>Separable differential equations: get all the <span class="m"><i>y</i></span> terms on one side with <span class="m">d<i>y</i></span>, then integrate both sides.</li>
+          </ul>
+        </section>
+        <section class="block">
+          <span class="label">Key formulas</span>
+          <ul class="formulas">
+            <li><span class="what">Powers (n ≠ −1)</span><span class="hl"><math><mo>∫</mo><msup><mi>x</mi><mi>n</mi></msup><mspace width="0.2em"></mspace><mi>d</mi><mi>x</mi><mo>=</mo><mfrac><msup><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></mfrac><mo>+</mo><mi>c</mi></math></span></li>
+            <li><span class="what">Reciprocal</span><span class="hl"><math><mo>∫</mo><mfrac><mn>1</mn><mi>x</mi></mfrac><mspace width="0.2em"></mspace><mi>d</mi><mi>x</mi><mo>=</mo><mi>ln</mi><mo>|</mo><mi>x</mi><mo>|</mo><mo>+</mo><mi>c</mi></math></span></li>
+            <li><span class="what">Exponential</span><span class="hl"><math><mo>∫</mo><msup><mi>e</mi><mrow><mi>k</mi><mi>x</mi></mrow></msup><mspace width="0.2em"></mspace><mi>d</mi><mi>x</mi><mo>=</mo><mfrac><mn>1</mn><mi>k</mi></mfrac><msup><mi>e</mi><mrow><mi>k</mi><mi>x</mi></mrow></msup><mo>+</mo><mi>c</mi></math></span></li>
+            <li><span class="what">Trig</span><span class="hl m">∫ cos <i>kx</i> d<i>x</i> = (1/<i>k</i>) sin <i>kx</i> + <i>c</i></span><span class="hl m">∫ sin <i>kx</i> d<i>x</i> = −(1/<i>k</i>) cos <i>kx</i> + <i>c</i></span></li>
+            <li><span class="what">By parts</span><span class="hl"><math><mo>∫</mo><mi>u</mi><mfrac><mrow><mi>d</mi><mi>v</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mi>d</mi><mi>x</mi><mo>=</mo><mi>u</mi><mi>v</mi><mo>−</mo><mo>∫</mo><mi>v</mi><mfrac><mrow><mi>d</mi><mi>u</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mi>d</mi><mi>x</mi></math></span></li>
+          </ul>
+        </section>
+        <section class="block">
+          <div class="example">
+            <div class="q"><span class="label">Worked example</span>Find the area enclosed between the curve <span class="m"><i>y</i> = 4<i>x</i> − <i>x</i>²</span> and the <span class="m"><i>x</i></span>-axis.</div>
+            <details>
+              <summary><span class="closed">Show solution</span><span class="open">Hide solution</span></summary>
+              <ol class="steps">
+                <li>Roots: <span class="m"><i>x</i>(4 − <i>x</i>) = 0</span>, so <span class="m"><i>x</i> = 0</span> and <span class="m"><i>x</i> = 4</span>. The curve is above the axis between them.</li>
+                <li><math><msubsup><mo>∫</mo><mn>0</mn><mn>4</mn></msubsup><mo>(</mo><mn>4</mn><mi>x</mi><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup><mo>)</mo><mspace width="0.2em"></mspace><mi>d</mi><mi>x</mi><mo>=</mo><msubsup><mrow><mo>[</mo><mn>2</mn><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mfrac><msup><mi>x</mi><mn>3</mn></msup><mn>3</mn></mfrac><mo>]</mo></mrow><mn>0</mn><mn>4</mn></msubsup></math></li>
+                <li><span class="m">= (32 − 64/3) − 0 = 32/3</span>.</li>
+              </ol>
+              <span class="ans">Area = 32/3 ≈ 10.7 square units</span>
+            </details>
+          </div>
+        </section>
+        <section class="block">
+          <span class="label">Practice</span>
+          <ol class="practice">
+            <li>Find <span class="m">∫ <i>x</i> cos <i>x</i> d<i>x</i></span>. <span class="marks">[4 marks]</span>
+              <details><summary>Show answer</summary>
+                <p>x sin x + cos x + c</p>
+                <p class="how">By parts with u = x, dv/dx = cos x: x sin x − ∫ sin x dx.</p>
+              </details>
+            </li>
+            <li>Solve <span class="m">d<i>y</i>/d<i>x</i> = 2<i>xy</i></span>, given that <span class="m"><i>y</i> = 3</span> when <span class="m"><i>x</i> = 0</span>. <span class="marks">[5 marks]</span>
+              <details><summary>Show answer</summary>
+                <p>y = 3e^(x²)</p>
+                <p class="how">∫ (1/y) dy = ∫ 2x dx gives ln|y| = x² + c, so y = Ae^(x²). Then y(0) = 3 gives A = 3.</p>
+              </details>
+            </li>
+          </ol>
+        </section>
+        <section class="block">
+          <div class="watch"><span class="hand">Watch out!</span>
+            <p>If part of the region is below the <span class="m"><i>x</i></span>-axis, integrating straight across will cancel areas out. Find the roots first and add the separate areas as positive values.</p>
+          </div>
+        </section>
+      </article>
+
+      <!-- ============ 10. NUMERICAL ============ -->
+      <article class="topic" id="numerical">
+        <header class="topic-head"><h2>Numerical methods</h2><span class="label">Year 2</span></header>
+        <section class="block">
+          <span class="label">Notes</span>
+          <ul class="notes">
+            <li><b>Change of sign:</b> if f is continuous and <span class="m">f(<i>a</i>)</span>, <span class="m">f(<i>b</i>)</span> have opposite signs, there is a root between <span class="m"><i>a</i></span> and <span class="m"><i>b</i></span>.</li>
+            <li>It can fail: a repeated root (no sign change), or an asymptote (sign change without a root).</li>
+            <li><b>Iteration:</b> rearrange <span class="m">f(<i>x</i>) = 0</span> to <span class="m"><i>x</i> = g(<i>x</i>)</span> and use <span class="m"><i>x</i><sub><i>n</i>+1</sub> = g(<i>x<sub>n</sub></i>)</span>. Draw staircase or cobweb diagrams to show convergence.</li>
+            <li><b>Newton–Raphson</b> fails if <span class="m">f′(<i>x<sub>n</sub></i>)</span> is zero or close to zero (near a turning point).</li>
+            <li>The trapezium rule <b>overestimates</b> for a convex curve and <b>underestimates</b> for a concave curve.</li>
+          </ul>
+        </section>
+        <section class="block">
+          <span class="label">Key formulas</span>
+          <ul class="formulas">
+            <li><span class="what">Newton–Raphson</span><span class="hl"><math><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><msub><mi>x</mi><mi>n</mi></msub><mo>−</mo><mfrac><mrow><mi>f</mi><mo>(</mo><msub><mi>x</mi><mi>n</mi></msub><mo>)</mo></mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>(</mo><msub><mi>x</mi><mi>n</mi></msub><mo>)</mo></mrow></mfrac></math></span></li>
+            <li><span class="what">Trapezium rule</span><span class="hl"><math><mo>∫</mo><mo>≈</mo><mfrac><mi>h</mi><mn>2</mn></mfrac><mo>[</mo><msub><mi>y</mi><mn>0</mn></msub><mo>+</mo><mn>2</mn><mo>(</mo><msub><mi>y</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>y</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>)</mo><mo>+</mo><msub><mi>y</mi><mi>n</mi></msub><mo>]</mo><mo>,</mo><mspace width="0.5em"></mspace><mi>h</mi><mo>=</mo><mfrac><mrow><mi>b</mi><mo>−</mo><mi>a</mi></mrow><mi>n</mi></mfrac></math></span></li>
+          </ul>
+        </section>
+        <section class="block">
+          <div class="example">
+            <div class="q"><span class="label">Worked example</span>Show that <span class="m">f(<i>x</i>) = <i>x</i>³ − 2<i>x</i> − 5</span> has a root between 2 and 3, then use Newton–Raphson with <span class="m"><i>x</i><sub>0</sub> = 2</span> to find <span class="m"><i>x</i><sub>2</sub></span> to 4 d.p.</div>
+            <details>
+              <summary><span class="closed">Show solution</span><span class="open">Hide solution</span></summary>
+              <ol class="steps">
+                <li><span class="m">f(2) = −1 &lt; 0</span> and <span class="m">f(3) = 16 &gt; 0</span>. There is a change of sign and f is continuous, so there is a root in [2, 3].</li>
+                <li><span class="m">f′(<i>x</i>) = 3<i>x</i>² − 2</span>, so <span class="m">f′(2) = 10</span> and <span class="m"><i>x</i><sub>1</sub> = 2 − (−1)/10 = 2.1</span>.</li>
+                <li><span class="m">f(2.1) = 0.061</span>, <span class="m">f′(2.1) = 11.23</span>, so <span class="m"><i>x</i><sub>2</sub> = 2.1 − 0.061/11.23 = 2.094568…</span></li>
+              </ol>
+              <span class="ans">x₂ = 2.0946 (4 d.p.)</span>
+            </details>
+          </div>
+        </section>
+        <section class="block">
+          <span class="label">Practice</span>
+          <ol class="practice">
+            <li>Use the trapezium rule with 4 strips to estimate <math><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup><msup><mi>e</mi><msup><mi>x</mi><mn>2</mn></msup></msup><mspace width="0.2em"></mspace><mi>d</mi><mi>x</mi></math> to 3 d.p. Is it an over- or underestimate? <span class="marks">[5 marks]</span>
+              <details><summary>Show answer</summary>
+                <p>1.491, an overestimate</p>
+                <p class="how">h = 0.25; y-values 1, 1.06449, 1.28403, 1.75505, 2.71828. 0.125 × [1 + 2.71828 + 2(4.10357)] = 1.4907. The curve is convex, so the trapezia sit above it.</p>
+              </details>
+            </li>
+            <li>Use <span class="m"><i>x</i><sub><i>n</i>+1</sub> = ∛(2<i>x<sub>n</sub></i> + 5)</span> with <span class="m"><i>x</i><sub>0</sub> = 2</span> to find <span class="m"><i>x</i><sub>1</sub>, <i>x</i><sub>2</sub>, <i>x</i><sub>3</sub></span> to 4 d.p. <span class="marks">[3 marks]</span>
+              <details><summary>Show answer</summary>
+                <p>2.0801, 2.0924, 2.0942</p>
+                <p class="how">This is a rearrangement of x³ − 2x − 5 = 0, so it converges to the same root as the worked example.</p>
+              </details>
+            </li>
+          </ol>
+        </section>
+        <section class="block">
+          <div class="watch"><span class="hand">Watch out!</span>
+            <p>For a sign-change argument you must state <b>three</b> things: both values with their signs, that there is a change of sign, and that f is continuous on the interval. Then conclude.</p>
+          </div>
+        </section>
+      </article>
+
+      <!-- ============ 11. VECTORS ============ -->
+      <article class="topic" id="vectors">
+        <header class="topic-head"><h2>Vectors</h2><span class="label">Year 1 + 2</span></header>
+        <section class="block">
+          <span class="label">Notes</span>
+          <ul class="notes">
+            <li>A vector has magnitude and direction. Write it as <span class="m"><i>a</i><b>i</b> + <i>b</i><b>j</b> + <i>c</i><b>k</b></span> or as a column.</li>
+            <li>The position vector of point A is <span class="m"><b>a</b> = <span style="text-decoration:overline">OA</span></span>. The vector from A to B is <span class="m"><b>b</b> − <b>a</b></span>.</li>
+            <li>Vectors are parallel if one is a scalar multiple of the other.</li>
+            <li>A unit vector has magnitude 1: divide the vector by its magnitude.</li>
+            <li>To show points are collinear, show two vectors between them are parallel <b>and</b> share a point.</li>
+          </ul>
+        </section>
+        <section class="block">
+          <span class="label">Key formulas</span>
+          <ul class="formulas">
+            <li><span class="what">Magnitude</span><span class="hl"><math><mo>|</mo><mi>a</mi><mi mathvariant="bold">i</mi><mo>+</mo><mi>b</mi><mi mathvariant="bold">j</mi><mo>+</mo><mi>c</mi><mi mathvariant="bold">k</mi><mo>|</mo><mo>=</mo><msqrt><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>+</mo><msup><mi>b</mi><mn>2</mn></msup><mo>+</mo><msup><mi>c</mi><mn>2</mn></msup></mrow></msqrt></math></span></li>
+            <li><span class="what">Vector A to B</span><span class="hl m"><span style="text-decoration:overline">AB</span> = <b>b</b> − <b>a</b></span></li>
+            <li><span class="what">Unit vector</span><span class="hl"><math><mover><mi mathvariant="bold">a</mi><mo>^</mo></mover><mo>=</mo><mfrac><mi mathvariant="bold">a</mi><mrow><mo>|</mo><mi mathvariant="bold">a</mi><mo>|</mo></mrow></mfrac></math></span></li>
+          </ul>
+        </section>
+        <section class="block">
+          <div class="example">
+            <div class="q"><span class="label">Worked example</span>A is (1, 2, −1) and B is (4, −2, 11). Find the distance AB and a unit vector in the direction of <span class="m"><span style="text-decoration:overline">AB</span></span>.</div>
+            <details>
+              <summary><span class="closed">Show solution</span><span class="open">Hide solution</span></summary>
+              <ol class="steps">
+                <li><span class="m"><span style="text-decoration:overline">AB</span> = <b>b</b> − <b>a</b> = 3<b>i</b> − 4<b>j</b> + 12<b>k</b></span>.</li>
+                <li><span class="m">|<span style="text-decoration:overline">AB</span>| = √(9 + 16 + 144) = √169 = 13</span>.</li>
+                <li>Unit vector: divide each component by 13.</li>
+              </ol>
+              <span class="ans">AB = 13; unit vector (3i − 4j + 12k)/13</span>
+            </details>
+          </div>
+        </section>
+        <section class="block">
+          <span class="label">Practice</span>
+          <ol class="practice">
+            <li><span class="m"><b>a</b> = 2<b>i</b> − <b>j</b></span> and <span class="m"><b>b</b> = <b>i</b> + 3<b>j</b></span>. Find <span class="m">|<b>a</b> + <b>b</b>|</span> in exact form. <span class="marks">[2 marks]</span>
+              <details><summary>Show answer</summary>
+                <p>√13</p>
+                <p class="how">a + b = 3i + 2j, and √(9 + 4) = √13.</p>
+              </details>
+            </li>
+            <li>Show that <span class="m"><b>p</b> = 3<b>i</b> − 6<b>j</b> + 9<b>k</b></span> is parallel to <span class="m"><b>q</b> = −<b>i</b> + 2<b>j</b> − 3<b>k</b></span>. <span class="marks">[2 marks]</span>
+              <details><summary>Show answer</summary>
+                <p>p = −3q, so p and q are parallel.</p>
+                <p class="how">Each component of p is −3 times the matching component of q.</p>
+              </details>
+            </li>
+          </ol>
+        </section>
+        <section class="block">
+          <div class="watch"><span class="hand">Watch out!</span>
+            <p><span class="m"><span style="text-decoration:overline">AB</span> = <b>b</b> − <b>a</b></span> (end minus start), <span class="wrong">not <b>a</b> − <b>b</b></span>. Getting this backwards reverses the direction.</p>
+          </div>
+        </section>
+      </article>
+
+      <nav class="next-page" aria-label="More pages">
+        <a href="index.html"><span>Back to</span>Home</a>
+        <a href="statistics.html"><span>Next</span>Statistics →</a>
+      </nav>
+    </div>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>A Level Maths Toolkit · Free revision notes for Pure, Statistics and Mechanics</span>
+    <span>Always check your own exam board's specification and formula booklet.</span>
+  </div>
+</footer>
+
+</body>
+</html>

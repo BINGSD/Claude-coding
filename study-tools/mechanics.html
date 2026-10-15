@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Mechanics Notes</title>
+  <meta name="claude:viewport-fit-sides" content="cover">
+  <meta name="description" content="A Level Mechanics revision notes, key formulas, worked examples and practice questions with answers.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Caveat:wght@600&family=STIX+Two+Text:ital@0;1&display=swap">
+  <link rel="stylesheet" href="study.css">
+</head>
+<body style="--s: var(--mech);">
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html"><b>∂</b> A Level Maths Toolkit</a>
+    <nav aria-label="Main">
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="pure.html">Pure</a></li>
+        <li><a href="statistics.html">Statistics</a></li>
+        <li><a href="mechanics.html" aria-current="page">Mechanics</a></li>
+        <li><a href="formulas.html">Formula sheet</a></li>
+        <li><a href="exam.html">Exam skills</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="page-head">
+    <span class="label strand">Paper 3, Section B · about one-sixth of the marks</span>
+    <h1>Mechanics</h1>
+    <p>Start every mechanics question with a clear diagram showing all the forces, then choose a positive direction. Use <span class="m"><i>g</i> = 9.8 m s<sup>−2</sup></span> unless told otherwise, and round answers that use it to 2 or 3 significant figures.</p>
+  </div>
+
+  <div class="layout">
+    <nav class="toc" aria-label="Topics">
+      <span class="label">Topics</span>
+      <ol>
+        <li><a href="#graphs">Kinematics graphs</a></li>
+        <li><a href="#suvat">Constant acceleration</a></li>
+        <li><a href="#variable">Variable acceleration</a></li>
+        <li><a href="#forces">Forces &amp; Newton's laws</a></li>
+        <li><a href="#friction">Friction &amp; slopes</a></li>
+        <li><a href="#projectiles">Projectiles</a></li>
+        <li><a href="#moments">Moments</a></li>
+      </ol>
+    </nav>
+
+    <div>
+      <!-- ============ 1. GRAPHS ============ -->
+      <article class="topic" id="graphs">
+        <header class="topic-head"><h2>Kinematics graphs &amp; modelling</h2><span class="label">Year 1</span></header>
+        <section class="block">
+          <span class="label">Notes</span>
+          <ul class="notes">
+            <li><b>Modelling terms:</b> <i>particle</i> (size ignored), <i>light</i> (mass ignored), <i>inextensible</i> (string doesn't stretch), <i>smooth</i> (no friction), <i>rigid</i> (doesn't bend), <i>uniform</i> (mass evenly spread).</li>
+            <li>Displacement–time graph: gradient = velocity.</li>
+            <li>Velocity–time graph: gradient = acceleration; area under the graph = displacement.</li>
+            <li><b>Distance</b> and <b>speed</b> are scalars. <b>Displacement</b>, <b>velocity</b> and <b>acceleration</b> are vectors, so they can be negative.</li>
+          </ul>
+        </section>
+        <section class="block">
+          <span class="label">Key formulas · SI units</span>
+          <ul class="formulas">
+            <li><span class="what">Displacement</span><span class="hl m">metres (m)</span></li>
+            <li><span class="what">Velocity</span><span class="hl m">m s<sup>−1</sup></span></li>
+            <li><span class="what">Acceleration</span><span class="hl m">m s<sup>−2</sup></span></li>
+            <li><span class="what">Force</span><span class="hl m">newtons (N) = kg m s<sup>−2</sup></span></li>
+          </ul>
+        </section>
+        <section class="block">
+          <div class="example">
+            <div class="q"><span class="label">Worked example</span>A car accelerates uniformly from rest to 15 m s⁻¹ in 5 s, travels at 15 m s⁻¹ for 20 s, then decelerates uniformly to rest in 10 s. Find the total distance travelled.</div>
+            <details>
+              <summary><span class="closed">Show solution</span><span class="open">Hide solution</span></summary>
+              <ol class="steps">
+                <li>Sketch the velocity–time graph: a trapezium with parallel sides 20 s (top) and 35 s (bottom), height 15.</li>
+                <li>Distance = area = <span class="m">½(20 + 35) × 15</span>.</li>
+                <li>Check by parts: <span class="m">37.5 + 300 + 75 = 412.5</span>.</li>
+              </ol>
+              <span class="ans">412.5 m</span>
+            </details>
+          </div>
+        </section>
+        <section class="block">
+          <span class="label">Practice</span>
+          <ol class="practice">
+            <li>For the car in the worked example, find the deceleration in the final stage. <span class="marks">[1 mark]</span>
+              <details><summary>Show answer</summary>
+                <p>1.5 m s⁻²</p>
+                <p class="how">Gradient = 15 ÷ 10.</p>
+              </details>
+            </li>
+            <li>What does modelling a ball as a particle ignore? <span class="marks">[1 mark]</span>
+              <details><summary>Show answer</summary>
+                <p>Its size (and so air resistance and rotation)</p>
+              </details>
+            </li>
+          </ol>
+        </section>
+        <section class="block">
+          <div class="watch"><span class="hand">Watch out!</span>
+            <p>If the velocity goes negative, area below the time axis is displacement in the opposite direction. For <b>distance</b>, add the areas as positive values.</p>
+          </div>
+        </section>
+      </article>
+
+      <!-- ============ 2. SUVAT ============ -->
+      <article class="topic" id="suvat">
+        <header class="topic-head"><h2>Constant acceleration (SUVAT)</h2><span class="label">Year 1</span></header>
+        <section class="block">
+          <span class="label">Notes</span>
+          <ul class="notes">
+            <li>Only use SUVAT when acceleration is <b>constant</b>.</li>
+            <li>List the five quantities, fill in the three you know, and pick the equation that has the one you want and leaves out the one you don't.</li>
+            <li>For vertical motion under gravity, <span class="m"><i>a</i> = −<i>g</i></span> if you take up as positive. At maximum height, <span class="m"><i>v</i> = 0</span>.</li>
+          </ul>
+        </section>
+        <section class="block">
+          <span class="label">Key formulas</span>
+          <ul class="formulas">
+            <li><span class="what">No s</span><span class="hl m"><i>v</i> = <i>u</i> + <i>at</i></span></li>
+            <li><span class="what">No v</span><span class="hl m"><i>s</i> = <i>ut</i> + ½<i>at</i>²</span></li>
+            <li><span class="what">No u</span><span class="hl m"><i>s</i> = <i>vt</i> − ½<i>at</i>²</span></li>
+            <li><span class="what">No t</span><span class="hl m"><i>v</i>² = <i>u</i>² + 2<i>as</i></span></li>
+            <li><span class="what">No a</span><span class="hl m"><i>s</i> = ½(<i>u</i> + <i>v</i>)<i>t</i></span></li>
+          </ul>
+        </section>
+        <section class="block">
+          <div class="example">
+            <div class="q"><span class="label">Worked example</span>A ball is thrown vertically upwards at 14.7 m s⁻¹. Find its maximum height and the time it takes to reach it.</div>
+            <details>
+              <summary><span class="closed">Show solution</span><span class="open">Hide solution</span></summary>
+              <ol class="steps">
+                <li>Up is positive: <span class="m"><i>u</i> = 14.7, <i>v</i> = 0, <i>a</i> = −9.8</span>.</li>
+                <li>Height: <span class="m"><i>v</i>² = <i>u</i>² + 2<i>as</i></span> gives <span class="m">0 = 216.09 − 19.6<i>s</i></span>, so <span class="m"><i>s</i> = 11.025</span>.</li>
+                <li>Time: <span class="m"><i>v</i> = <i>u</i> + <i>at</i></span> gives <span class="m">0 = 14.7 − 9.8<i>t</i></span>, so <span class="m"><i>t</i> = 1.5</span>.</li>
+              </ol>
+              <span class="ans">Maximum height 11.0 m after 1.5 s</span>
+            </details>
+          </div>
+        </section>
+        <section class="block">
+          <span class="label">Practice</span>
+          <ol class="practice">
+            <li>A stone is dropped from rest and falls for 2.5 s. Find the distance it falls and its final speed. <span class="marks">[3 marks]</span>
+              <details><summary>Show answer</summary>
+                <p>30.6 m; 24.5 m s⁻¹</p>
+                <p class="how">s = ½ × 9.8 × 2.5² = 30.625; v = 9.8 × 2.5.</p>
+              </details>
+            </li>
+            <li>A car travelling at 20 m s⁻¹ brakes with constant deceleration 2.5 m s⁻². How far does it travel before stopping? <span class="marks">[2 marks]</span>
+              <details><summary>Show answer</summary>
+                <p>80 m</p>
+                <p class="how">0 = 20² − 2 × 2.5 × s, so s = 400 ÷ 5.</p>
+              </details>
+            </li>
+          </ol>
+        </section>
+        <section class="block">
+          <div class="watch"><span class="hand">Watch out!</span>
+            <p>Choose a positive direction and stick to it. If up is positive, then <span class="m"><i>g</i></span> acts downwards, so <span class="m"><i>a</i> = −9.8</span>, and a point below the start has negative displacement.</p>
+          </div>
+        </section>
+      </article>
+
+      <!-- ============ 3. VARIABLE ============ -->
+      <article class="topic" id="variable">
+        <header class="topic-head"><h2>Variable acceleration</h2><span class="label">Year 1 + 2</span></header>
+        <section class="block">
+          <span class="label">Notes</span>
+          <ul class="notes">
+            <li>When acceleration changes with time, use calculus instead of SUVAT.</li>
+            <li>Differentiate to go <b>down</b> the chain: displacement → velocity → acceleration.</li>
+            <li>Integrate to go <b>up</b> the chain, using initial conditions to find the constant.</li>
+            <li>“At rest” means <span class="m"><i>v</i> = 0</span>. Maximum velocity occurs when <span class="m"><i>a</i> = 0</span>.</li>
+          </ul>
+        </section>
+        <section class="block">
+          <span class="label">Key formulas</span>
+          <ul class="formulas">
+            <li><span class="what">Differentiate</span><span class="hl"><math><mi>v</mi><mo>=</mo><mfrac><mrow><mi>d</mi><mi>s</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>,</mo><mspace width="0.6em"></mspace><mi>a</mi><mo>=</mo><mfrac><mrow><mi>d</mi><mi>v</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><msup><mi>d</mi><mn>2</mn></msup><mi>s</mi></mrow><mrow><mi>d</mi><msup><mi>t</mi><mn>2</mn></msup></mrow></mfrac></math></span></li>
+            <li><span class="what">Integrate</span><span class="hl"><math><mi>s</mi><mo>=</mo><mo>∫</mo><mi>v</mi><mspace width="0.2em"></mspace><mi>d</mi><mi>t</mi><mo>,</mo><mspace width="0.6em"></mspace><mi>v</mi><mo>=</mo><mo>∫</mo><mi>a</mi><mspace width="0.2em"></mspace><mi>d</mi><mi>t</mi></math></span></li>
+          </ul>
+        </section>
+        <section class="block">
+          <div class="example">
+            <div class="q"><span class="label">Worked example</span>A particle moves in a straight line with velocity <span class="m"><i>v</i> = 3<i>t</i>² − 12<i>t</i> + 9</span> m s⁻¹. Find when it is at rest, and its displacement from the start after 1 second.</div>
+            <details>
+              <summary><span class="closed">Show solution</span><span class="open">Hide solution</span></summary>
+              <ol class="steps">
+                <li>At rest: <span class="m">3<i>t</i>² − 12<i>t</i> + 9 = 3(<i>t</i> − 1)(<i>t</i> − 3) = 0</span>, so <span class="m"><i>t</i> = 1</span> or <span class="m"><i>t</i> = 3</span>.</li>
+                <li>Displacement: <span class="m"><i>s</i> = ∫ <i>v</i> d<i>t</i> = <i>t</i>³ − 6<i>t</i>² + 9<i>t</i></span> (with <span class="m"><i>s</i> = 0</span> at <span class="m"><i>t</i> = 0</span>).</li>
+                <li>At <span class="m"><i>t</i> = 1</span>: <span class="m"><i>s</i> = 1 − 6 + 9 = 4</span>.</li>
+              </ol>
+              <span class="ans">At rest when t = 1 s and t = 3 s; displacement 4 m</span>
+            </details>
+          </div>
+        </section>
+        <section class="block">
+          <span class="label">Practice</span>
+          <ol class="practice">
+            <li>A particle starts from rest at the origin with acceleration <span class="m"><i>a</i> = 4<i>t</i></span> m s⁻². Find its velocity and displacement at <span class="m"><i>t</i> = 3</span>. <span class="marks">[4 marks]</span>
+              <details><summary>Show answer</summary>
+                <p>v = 18 m s⁻¹, s = 18 m</p>
+                <p class="how">v = 2t² (c = 0) and s = 2t³/3 (c = 0).</p>
+              </details>
+            </li>
+            <li>For the worked example, find the total <b>distance</b> travelled in the first 3 seconds. <span class="marks">[3 marks]</span>
+              <details><summary>Show answer</summary>
+                <p>8 m</p>
+                <p class="how">It goes 4 m forwards (t = 0 to 1), then turns round. s(3) = 0, so it comes 4 m back. 4 + 4 = 8.</p>
+              </details>
+            </li>
+          </ol>
+        </section>
+        <section class="block">
+          <div class="watch"><span class="hand">Watch out!</span>
+            <p>If the particle changes direction during the interval, the integral gives displacement, not distance. Split the integral at the times when <span class="m"><i>v</i> = 0</span>.</p>
+          </div>
+        </section>
+      </article>
+
+      <!-- ============ 4. FORCES ============ -->
+      <article class="topic" id="forces">
+        <header class="topic-head"><h2>Forces &amp; Newton's laws</h2><span class="label">Year 1 + 2</span></header>
+        <section class="block">
+          <span class="label">Notes</span>
+          <ul class="notes">
+            <li><b>First law:</b> an object stays at rest or moves with constant velocity unless a resultant force acts on it.</li>
+            <li><b>Second law:</b> resultant force = mass × acceleration.</li>
+            <li><b>Third law:</b> if A exerts a force on B, B exerts an equal and opposite force on A.</li>
+            <li>For connected particles over a smooth pulley on a light inextensible string, the tension is the same throughout and both particles have the same size of acceleration.</li>
+            <li>Resolve forces into two perpendicular directions (usually horizontal/vertical, or parallel/perpendicular to a slope).</li>
+          </ul>
+        </section>
+        <section class="block">
+          <span class="label">Key formulas</span>
+          <ul class="formulas">
+            <li><span class="what">Newton's second law</span><span class="hl m"><i>F</i> = <i>ma</i></span></li>
+            <li><span class="what">Weight</span><span class="hl m"><i>W</i> = <i>mg</i></span></li>
+            <li><span class="what">Resolving a force F at angle θ</span><span class="hl m"><i>F</i> cos θ</span> along, <span class="hl m"><i>F</i> sin θ</span> perpendicular</li>
+          </ul>
+        </section>
+        <section class="block">
+          <div class="example">
+            <div class="q"><span class="label">Worked example</span>Particles of mass 5 kg and 3 kg hang either side of a smooth pulley on a light inextensible string. They are released from rest. Find the acceleration and the tension.</div>
+            <details>
+              <summary><span class="closed">Show solution</span><span class="open">Hide solution</span></summary>
+              <ol class="steps">
+                <li>The 5 kg mass moves down and the 3 kg mass moves up, both with acceleration <span class="m"><i>a</i></span>.</li>
+                <li>5 kg: <span class="m">5<i>g</i> − <i>T</i> = 5<i>a</i></span>. 3 kg: <span class="m"><i>T</i> − 3<i>g</i> = 3<i>a</i></span>.</li>
+                <li>Add: <span class="m">2<i>g</i> = 8<i>a</i></span>, so <span class="m"><i>a</i> = 2.45</span>.</li>
+                <li>Then <span class="m"><i>T</i> = 3(9.8 + 2.45) = 36.75</span>.</li>
+              </ol>
+              <span class="ans">a = 2.45 m s⁻², T = 36.75 N (36.8 N to 3 s.f.)</span>
+            </details>
+          </div>
+        </section>
+        <section class="block">
+          <span class="label">Practice</span>
+          <ol class="practice">
+            <li>A lift of mass 600 kg accelerates upwards at 0.5 m s⁻². Find the tension in the cable. <span class="marks">[2 marks]</span>
+              <details><summary>Show answer</summary>
+                <p>6180 N</p>
+                <p class="how">T − 600g = 600 × 0.5, so T = 5880 + 300.</p>
+              </details>
+            </li>
+            <li>A car of mass 1200 kg tows a trailer of mass 400 kg. The driving force is 2000 N. Resistances are 300 N on the car and 100 N on the trailer. Find the acceleration and the tension in the tow bar. <span class="marks">[4 marks]</span>
+              <details><summary>Show answer</summary>
+                <p>a = 1 m s⁻², T = 500 N</p>
+                <p class="how">Whole system: 2000 − 400 = 1600a. Trailer alone: T − 100 = 400 × 1.</p>
+              </details>
+            </li>
+          </ol>
+        </section>
+        <section class="block">
+          <div class="watch"><span class="hand">Watch out!</span>
+            <p>Mass (kg) and weight (N) are different. In <span class="m"><i>F</i> = <i>ma</i></span>, <span class="m"><i>F</i></span> is the <b>resultant</b> force, so subtract the forces acting against the motion.</p>
+          </div>
+        </section>
+      </article>
+
+      <!-- ============ 5. FRICTION ============ -->
+      <article class="topic" id="friction">
+        <header class="topic-head"><h2>Friction &amp; inclined planes</h2><span class="label">Year 2</span></header>
+        <section class="block">
+          <span class="label">Notes</span>
+          <ul class="notes">
+            <li>Friction opposes motion (or the tendency to move). It can take any value up to its maximum <span class="m"><i>μR</i></span>.</li>
+            <li><b>Limiting equilibrium</b> means the object is on the point of moving, so <span class="m"><i>F</i> = <i>μR</i></span> exactly.</li>
+            <li>On a slope at angle θ, resolve parallel and perpendicular to the slope. Weight has components <span class="m"><i>mg</i> sin θ</span> down the slope and <span class="m"><i>mg</i> cos θ</span> into the slope.</li>
+            <li>The normal reaction <span class="m"><i>R</i></span> changes if another force pulls at an angle, so always resolve to find it.</li>
+          </ul>
+        </section>
+        <section class="block">
+          <span class="label">Key formulas</span>
+          <ul class="formulas">
+            <li><span class="what">Friction</span><span class="hl m"><i>F</i> ≤ μ<i>R</i></span></li>
+            <li><span class="what">On a slope (no other forces)</span><span class="hl m"><i>R</i> = <i>mg</i> cos θ</span><span class="hl m">down-slope component <i>mg</i> sin θ</span></li>
+            <li><span class="what">Particle about to slip on a slope</span><span class="hl m">μ = tan θ</span></li>
+          </ul>
+        </section>
+        <section class="block">
+          <div class="example">
+            <div class="q"><span class="label">Worked example</span>A 4 kg block is released from rest on a rough slope inclined at 30°. The coefficient of friction is 0.2. Find its acceleration.</div>
+            <details>
+              <summary><span class="closed">Show solution</span><span class="open">Hide solution</span></summary>
+              <ol class="steps">
+                <li>Perpendicular to the slope: <span class="m"><i>R</i> = 4<i>g</i> cos 30° = 33.95 N</span>.</li>
+                <li>Friction (moving, so limiting): <span class="m"><i>F</i> = 0.2 × 33.95 = 6.79 N</span>, acting up the slope.</li>
+                <li>Down the slope: <span class="m">4<i>g</i> sin 30° − 6.79 = 4<i>a</i></span>, so <span class="m">19.6 − 6.79 = 4<i>a</i></span>.</li>
+              </ol>
+              <span class="ans">a = 3.20 m s⁻² (3 s.f.)</span>
+            </details>
+          </div>
+        </section>
+        <section class="block">
+          <span class="label">Practice</span>
+          <ol class="practice">
+            <li>A 10 kg box on a rough horizontal floor (μ = 0.3) is pulled by a horizontal force of 50 N. Find its acceleration. <span class="marks">[3 marks]</span>
+              <details><summary>Show answer</summary>
+                <p>2.06 m s⁻²</p>
+                <p class="how">R = 98, so F = 29.4. Then 50 − 29.4 = 10a.</p>
+              </details>
+            </li>
+            <li>Find the least coefficient of friction that lets a block rest on a slope at 25° without slipping. <span class="marks">[3 marks]</span>
+              <details><summary>Show answer</summary>
+                <p>μ = tan 25° = 0.466</p>
+                <p class="how">mg sin 25° ≤ μ mg cos 25°, so μ ≥ tan 25°.</p>
+              </details>
+            </li>
+          </ol>
+        </section>
+        <section class="block">
+          <div class="watch"><span class="hand">Watch out!</span>
+            <p>On a slope, <span class="m"><i>R</i> ≠ <i>mg</i></span>. And if the block is at rest but not about to move, friction is <b>less than</b> <span class="m">μ<i>R</i></span>, so you can't use <span class="m">F = μR</span>.</p>
+          </div>
+        </section>
+      </article>
+
+      <!-- ============ 6. PROJECTILES ============ -->
+      <article class="topic" id="projectiles">
+        <header class="topic-head"><h2>Projectiles</h2><span class="label">Year 2</span></header>
+        <section class="block">
+          <span class="label">Notes</span>
+          <ul class="notes">
+            <li>Treat horizontal and vertical motion separately. Time is the only quantity they share.</li>
+            <li>Horizontally: no acceleration (ignoring air resistance), so <span class="m"><i>x</i> = (<i>u</i> cos θ)<i>t</i></span>.</li>
+            <li>Vertically: SUVAT with <span class="m"><i>a</i> = −<i>g</i></span> and initial velocity <span class="m"><i>u</i> sin θ</span>.</li>
+            <li>At the highest point the vertical velocity is zero. The speed at any time is <span class="m">√(<i>v<sub>x</sub></i>² + <i>v<sub>y</sub></i>²)</span>.</li>
+          </ul>
+        </section>
+        <section class="block">
+          <span class="label">Key formulas</span>
+          <ul class="formulas">
+            <li><span class="what">Initial components</span><span class="hl m"><i>u<sub>x</sub></i> = <i>u</i> cos θ</span><span class="hl m"><i>u<sub>y</sub></i> = <i>u</i> sin θ</span></li>
+            <li><span class="what">Time of flight (level ground)</span><span class="hl"><math><mi>T</mi><mo>=</mo><mfrac><mrow><mn>2</mn><mi>u</mi><mi>sin</mi><mi>θ</mi></mrow><mi>g</mi></mfrac></math></span></li>
+            <li><span class="what">Maximum height</span><span class="hl"><math><mi>H</mi><mo>=</mo><mfrac><mrow><msup><mi>u</mi><mn>2</mn></msup><msup><mi>sin</mi><mn>2</mn></msup><mi>θ</mi></mrow><mrow><mn>2</mn><mi>g</mi></mrow></mfrac></math></span></li>
+          </ul>
+        </section>
+        <section class="block">
+          <div class="example">
+            <div class="q"><span class="label">Worked example</span>A ball is projected from level ground at 20 m s⁻¹, 30° above the horizontal. Find the time of flight, the range and the maximum height.</div>
+            <details>
+              <summary><span class="closed">Show solution</span><span class="open">Hide solution</span></summary>
+              <ol class="steps">
+                <li>Components: <span class="m"><i>u<sub>x</sub></i> = 20 cos 30° = 17.32</span>, <span class="m"><i>u<sub>y</sub></i> = 20 sin 30° = 10</span>.</li>
+                <li>Lands when <span class="m"><i>s<sub>y</sub></i> = 0</span>: <span class="m">10<i>t</i> − 4.9<i>t</i>² = 0</span>, so <span class="m"><i>t</i> = 10/4.9 = 2.04 s</span>.</li>
+                <li>Range: <span class="m">17.32 × 2.041 = 35.3 m</span>.</li>
+                <li>Max height: <span class="m">0 = 10² − 2(9.8)<i>s</i></span>, so <span class="m"><i>s</i> = 5.10 m</span>.</li>
+              </ol>
+              <span class="ans">2.04 s, range 35.3 m, max height 5.10 m</span>
+            </details>
+          </div>
+        </section>
+        <section class="block">
+          <span class="label">Practice</span>
+          <ol class="practice">
+            <li>A ball is thrown horizontally at 12 m s⁻¹ from the top of a cliff 40 m high. How far from the foot of the cliff does it land? <span class="marks">[3 marks]</span>
+              <details><summary>Show answer</summary>
+                <p>34.3 m</p>
+                <p class="how">Vertically: 40 = 4.9t², so t = 2.857 s. Horizontally: 12 × 2.857.</p>
+              </details>
+            </li>
+            <li>Find the speed of the ball in question 1 as it lands. <span class="marks">[3 marks]</span>
+              <details><summary>Show answer</summary>
+                <p>30.5 m s⁻¹</p>
+                <p class="how">v_y = 9.8 × 2.857 = 28.0 and v_x = 12, so speed = √(12² + 28²) = √928.</p>
+              </details>
+            </li>
+          </ol>
+        </section>
+        <section class="block">
+          <div class="watch"><span class="hand">Watch out!</span>
+            <p>Don't use the total speed in a single SUVAT equation. Split it into components first, and only ever share <span class="m"><i>t</i></span> between the two directions.</p>
+          </div>
+        </section>
+      </article>
+
+      <!-- ============ 7. MOMENTS ============ -->
+      <article class="topic" id="moments">
+        <header class="topic-head"><h2>Moments</h2><span class="label">Year 2</span></header>
+        <section class="block">
+          <span class="label">Notes</span>
+          <ul class="notes">
+            <li>The moment of a force about a point measures its turning effect.</li>
+            <li>A rigid body is in <b>equilibrium</b> when the resultant force is zero <b>and</b> the total moment about every point is zero.</li>
+            <li>The weight of a <b>uniform</b> rod acts at its midpoint.</li>
+            <li>Take moments about a point where an unknown force acts, so it drops out of the equation.</li>
+            <li>When a plank is <b>about to tilt</b> about a support, the reaction at the other support is zero.</li>
+          </ul>
+        </section>
+        <section class="block">
+          <span class="label">Key formulas</span>
+          <ul class="formulas">
+            <li><span class="what">Moment</span><span class="hl m">force × perpendicular distance from the pivot</span></li>
+            <li><span class="what">Equilibrium</span><span class="hl m">Σ clockwise moments = Σ anticlockwise moments</span></li>
+            <li><span class="what">Units</span><span class="hl m">newton metres (N m)</span></li>
+          </ul>
+        </section>
+        <section class="block">
+          <div class="example">
+            <div class="q"><span class="label">Worked example</span>A uniform plank AB of length 6 m and mass 20 kg rests on supports at A and B. A child of mass 30 kg stands 2 m from A. Find the reaction at each support.</div>
+            <details>
+              <summary><span class="closed">Show solution</span><span class="open">Hide solution</span></summary>
+              <ol class="steps">
+                <li>The plank's weight acts at its midpoint, 3 m from A.</li>
+                <li>Moments about A: <span class="m"><i>R<sub>B</sub></i> × 6 = 20<i>g</i> × 3 + 30<i>g</i> × 2 = 120<i>g</i></span>, so <span class="m"><i>R<sub>B</sub></i> = 20<i>g</i></span>.</li>
+                <li>Resolve vertically: <span class="m"><i>R<sub>A</sub></i> + <i>R<sub>B</sub></i> = 50<i>g</i></span>, so <span class="m"><i>R<sub>A</sub></i> = 30<i>g</i></span>.</li>
+              </ol>
+              <span class="ans">R_A = 294 N, R_B = 196 N</span>
+            </details>
+          </div>
+        </section>
+        <section class="block">
+          <span class="label">Practice</span>
+          <ol class="practice">
+            <li>A uniform 4 m rod is pivoted at its centre. A 6 kg mass hangs 0.5 m from one end. Where must an 8 kg mass hang on the other side to balance it? <span class="marks">[3 marks]</span>
+              <details><summary>Show answer</summary>
+                <p>1.125 m from the centre</p>
+                <p class="how">The 6 kg mass is 1.5 m from the centre: 6g × 1.5 = 8g × d.</p>
+              </details>
+            </li>
+            <li>A uniform plank AB, 6 m long and of mass 20 kg, rests on supports at C (1 m from A) and D (1 m from B). How far beyond D can an 80 kg man stand before the plank tilts? <span class="marks">[4 marks]</span>
+              <details><summary>Show answer</summary>
+                <p>0.5 m beyond D</p>
+                <p class="how">About to tilt about D, so R_C = 0. Moments about D: 20g × 2 = 80g × x.</p>
+              </details>
+            </li>
+          </ol>
+        </section>
+        <section class="block">
+          <div class="watch"><span class="hand">Watch out!</span>
+            <p>Use the <b>perpendicular</b> distance from the pivot to the line of action of the force. For a force at an angle, resolve it or use <span class="m"><i>Fd</i> sin θ</span>.</p>
+          </div>
+        </section>
+      </article>
+
+      <nav class="next-page" aria-label="More pages">
+        <a href="statistics.html"><span>Previous</span>← Statistics</a>
+        <a href="formulas.html"><span>Next</span>Formula sheet →</a>
+      </nav>
+    </div>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>A Level Maths Toolkit · Free revision notes for Pure, Statistics and Mechanics</span>
+    <span>Always check your own exam board's specification and formula booklet.</span>
+  </div>
+</footer>
+
+</body>
+</html>
