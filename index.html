@@ -25,6 +25,7 @@
         <li><a href="index.html" aria-current="page">Home</a></li>
         <li><a href="courses.html">Courses</a></li>
         <li><a href="#how">How it works</a></li>
+        <li><a href="#practice">Practice</a></li>
         <li><a href="#pricing">Pricing</a></li>
         <li><a href="#tutors">Tutors</a></li>
         <li><a href="#faq">FAQ</a></li>
@@ -192,6 +193,42 @@
       </div>
     </section>
 
+    <!-- ===== Practice quiz ===== -->
+    <section class="section" id="practice">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <span class="eyebrow">Try it yourself</span>
+          <h2>Quick-fire practice quiz</h2>
+          <p>Seven exam-style questions across Pure, Statistics and Mechanics. Each answer comes with a worked explanation.</p>
+        </div>
+
+        <div class="quiz" id="quiz">
+          <noscript><p class="quiz-noscript">Turn on JavaScript to try the practice quiz.</p></noscript>
+          <div class="quiz-progress-bar" aria-hidden="true"><span></span></div>
+          <div class="quiz-body">
+            <div class="quiz-meta">
+              <span class="quiz-topic"></span>
+              <span class="quiz-count"></span>
+            </div>
+            <p class="quiz-question"></p>
+            <div class="quiz-options"></div>
+            <p class="quiz-feedback" hidden aria-live="polite"></p>
+            <button type="button" class="btn btn--primary quiz-next" hidden>Next question →</button>
+          </div>
+          <div class="quiz-result" hidden>
+            <span class="eyebrow">Your score</span>
+            <div class="quiz-score"></div>
+            <p class="quiz-message"></p>
+            <p class="quiz-best"></p>
+            <div class="hero-actions" style="justify-content:center; margin:0;">
+              <button type="button" class="btn btn--ghost quiz-restart">Try again</button>
+              <a href="#contact" class="btn btn--primary">Book a free trial</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ===== Pricing ===== -->
     <section class="section" id="pricing">
       <div class="container">
@@ -345,7 +382,7 @@
               <li style="color:#dfe4f0;">No payment details needed</li>
             </ul>
           </div>
-          <form class="form" action="#" method="post">
+          <form class="form" id="booking-form" action="#" method="post">
             <div class="form-row">
               <div>
                 <label for="name">Full name</label>
@@ -383,6 +420,13 @@
             </div>
             <button type="submit" class="btn btn--light btn--block">Request free trial</button>
           </form>
+          <div class="form-success" hidden tabindex="-1" aria-live="polite">
+            <div class="form-success-icon">✓</div>
+            <h3>Thanks, <span class="form-success-name"></span>!</h3>
+            <p>Your free trial request (<span class="form-success-detail"></span>) has been noted.
+            In a live site, a tutor would now email you within 24 hours.</p>
+            <button type="button" class="btn btn--light form-again">Send another request</button>
+          </div>
         </div>
       </div>
     </section>
@@ -423,11 +467,12 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© 2026 Apex Maths Tutoring</span>
+        <span>© <span class="js-year">2026</span> Apex Maths Tutoring</span>
         <span>Made with HTML &amp; CSS</span>
       </div>
     </div>
   </footer>
 
+  <script src="script.js" defer></script>
 </body>
 </html>

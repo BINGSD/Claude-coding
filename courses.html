@@ -45,6 +45,11 @@
           <a href="#further">Further Maths</a>
           <a href="#timetable">Timetable</a>
         </nav>
+        <div class="search">
+          <label for="unit-search" class="visually-hidden">Search the syllabus</label>
+          <input type="search" id="unit-search" placeholder="Search topics — e.g. integration, normal, friction…" autocomplete="off">
+          <p id="search-status" class="search-status" aria-live="polite"></p>
+        </div>
       </div>
     </section>
 
@@ -451,11 +456,12 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© 2026 Apex Maths Tutoring</span>
+        <span>© <span class="js-year">2026</span> Apex Maths Tutoring</span>
         <span>Made with HTML &amp; CSS</span>
       </div>
     </div>
   </footer>
 
+  <script src="script.js" defer></script>
 </body>
 </html>
