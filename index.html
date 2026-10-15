@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apex Maths — A Level Mathematics Tutoring</title>
+  <meta name="description" content="Expert A Level Maths and Further Maths tutoring. Pure, Statistics and Mechanics courses for AQA, Edexcel and OCR students.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <nav class="container nav" aria-label="Main">
+      <a href="index.html" class="logo"><span class="logo-mark">∑</span> Apex Maths</a>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <label for="nav-toggle" class="nav-burger" aria-label="Toggle menu"><span></span></label>
+
+      <ul class="nav-links">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#tutors">Tutors</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact" class="btn btn--primary">Book a free trial</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== Hero ===== -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">A Level Maths &amp; Further Maths</span>
+          <h1>From <em>stuck</em> to an A*&nbsp;— one proof at a time.</h1>
+          <p class="hero-lead">
+            Small-group and one-to-one tutoring for Year 12 and 13 students.
+            We cover every topic in Pure, Statistics and Mechanics, with
+            exam-board-specific practice for AQA, Edexcel and OCR.
+          </p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn--primary">Book a free trial lesson</a>
+            <a href="courses.html" class="btn btn--ghost">Explore courses</a>
+          </div>
+          <ul class="hero-stats">
+            <li><strong>87%</strong><span>of students achieve A*–A</span></li>
+            <li><strong>1,200+</strong><span>students tutored</span></li>
+            <li><strong>4.9/5</strong><span>average rating</span></li>
+          </ul>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="eq-card eq-card--1">
+            <small>Pure · Integration</small>
+            <div class="big">∫ <span class="frac"><span>1</span><span>x</span></span> dx = ln|x| + C</div>
+          </div>
+          <div class="eq-card eq-card--2">
+            <small>Statistics · Normal</small>
+            <div class="big">X ~ N(μ, σ²)</div>
+          </div>
+          <div class="eq-card eq-card--3">
+            <small>Mechanics · SUVAT</small>
+            <div class="big">s = ut + ½at²</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Exam boards ===== -->
+    <div class="boards">
+      <div class="container">
+        <span class="label">Specification-matched for</span>
+        <span class="board">AQA</span>
+        <span class="board">Pearson Edexcel</span>
+        <span class="board">OCR A</span>
+        <span class="board">OCR MEI</span>
+        <span class="board">WJEC / Eduqas</span>
+      </div>
+    </div>
+
+    <!-- ===== Courses ===== -->
+    <section class="section" id="courses">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Our courses</span>
+          <h2>Everything on the A Level specification</h2>
+          <p>Structured courses that follow the official content, broken into
+          weekly units with notes, worked examples and past-paper practice.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="course-card course-card--pure">
+            <div class="course-icon">f</div>
+            <h3>Pure Mathematics</h3>
+            <p>Two-thirds of the A Level. Build the algebraic fluency and proof
+            skills that every other paper depends on.</p>
+            <ul class="topic-list">
+              <li>Proof</li><li>Algebra</li><li>Trigonometry</li>
+              <li>Calculus</li><li>Vectors</li><li>Sequences</li>
+            </ul>
+            <a href="courses.html#pure" class="more">View syllabus</a>
+          </article>
+
+          <article class="course-card course-card--stats">
+            <div class="course-icon">σ</div>
+            <h3>Statistics</h3>
+            <p>Interpret data, model with probability distributions and carry
+            out hypothesis tests with confidence.</p>
+            <ul class="topic-list">
+              <li>Sampling</li><li>Probability</li><li>Binomial</li>
+              <li>Normal</li><li>Hypothesis tests</li>
+            </ul>
+            <a href="courses.html#stats" class="more">View syllabus</a>
+          </article>
+
+          <article class="course-card course-card--mech">
+            <div class="course-icon">F</div>
+            <h3>Mechanics</h3>
+            <p>Apply maths to the physical world: motion, forces, moments and
+            projectiles, with clear diagram-first methods.</p>
+            <ul class="topic-list">
+              <li>Kinematics</li><li>SUVAT</li><li>Newton's laws</li>
+              <li>Projectiles</li><li>Moments</li>
+            </ul>
+            <a href="courses.html#mech" class="more">View syllabus</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Why us ===== -->
+    <section class="section section--dark">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow" style="color: var(--gold);">Why Apex</span>
+          <h2>Tutoring built around how A Level is actually marked</h2>
+          <p>We teach the maths properly — and then we teach you how to get the marks for it.</p>
+        </div>
+        <div class="features">
+          <div class="feature">
+            <div class="feature-num">01</div>
+            <h3>Expert tutors</h3>
+            <p>Every tutor holds a maths degree and has taught or examined at A Level.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-num">02</div>
+            <h3>Small groups</h3>
+            <p>Maximum six students per group, so everyone gets questions answered.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-num">03</div>
+            <h3>Past-paper bank</h3>
+            <p>Over 2,000 exam questions sorted by topic and difficulty, with mark schemes.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-num">04</div>
+            <h3>Progress reports</h3>
+            <p>Monthly reports for students and parents with predicted grades and next steps.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== How it works ===== -->
+    <section class="section section--alt" id="how">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <span class="eyebrow">How it works</span>
+          <h2>Three steps to better grades</h2>
+        </div>
+        <ol class="steps">
+          <li>
+            <h3>Free diagnostic</h3>
+            <p>A 45-minute trial lesson and short assessment to find exactly where marks are being lost.</p>
+          </li>
+          <li>
+            <h3>Personal plan</h3>
+            <p>We map your weak topics against your exam board's specification and build a weekly plan.</p>
+          </li>
+          <li>
+            <h3>Learn &amp; practise</h3>
+            <p>Live lessons, homework with feedback, and timed mock papers as exams approach.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== Pricing ===== -->
+    <section class="section" id="pricing">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <span class="eyebrow">Pricing</span>
+          <h2>Simple, flexible plans</h2>
+          <p>No contracts. Pause or cancel any time.</p>
+        </div>
+        <div class="pricing">
+          <div class="plan">
+            <h3>Group</h3>
+            <p class="plan-desc">Small-group online classes</p>
+            <div class="plan-price">£25<span> / lesson</span></div>
+            <ul class="checklist">
+              <li>Weekly 90-minute live class</li>
+              <li>Max 6 students</li>
+              <li>Lesson notes &amp; recordings</li>
+              <li>Topic-by-topic homework</li>
+            </ul>
+            <a href="#contact" class="btn btn--ghost btn--block">Choose Group</a>
+          </div>
+
+          <div class="plan plan--featured">
+            <span class="plan-badge">Most popular</span>
+            <h3>One-to-One</h3>
+            <p class="plan-desc">Fully personalised tutoring</p>
+            <div class="plan-price">£55<span> / hour</span></div>
+            <ul class="checklist">
+              <li>Everything in Group</li>
+              <li>Lessons at a time that suits you</li>
+              <li>Personal study plan</li>
+              <li>Marked homework with feedback</li>
+              <li>Monthly parent report</li>
+            </ul>
+            <a href="#contact" class="btn btn--primary btn--block">Choose One-to-One</a>
+          </div>
+
+          <div class="plan">
+            <h3>Exam Bootcamp</h3>
+            <p class="plan-desc">Intensive Easter revision</p>
+            <div class="plan-price">£295<span> / course</span></div>
+            <ul class="checklist">
+              <li>5 days × 4 hours</li>
+              <li>Full-syllabus review</li>
+              <li>3 timed mock papers</li>
+              <li>Exam technique masterclass</li>
+            </ul>
+            <a href="#contact" class="btn btn--ghost btn--block">Join Bootcamp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Tutors ===== -->
+    <section class="section section--alt" id="tutors">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Meet the team</span>
+          <h2>Tutors who love maths</h2>
+        </div>
+        <div class="grid-3">
+          <div class="tutor">
+            <div class="avatar" style="--a1:#2a6fdb; --a2:#1b998b;">SC</div>
+            <h3>Dr Sarah Chen</h3>
+            <div class="role">Head of Pure Maths</div>
+            <p>PhD in Number Theory. 12 years teaching A Level and an experienced exam marker.</p>
+          </div>
+          <div class="tutor">
+            <div class="avatar" style="--a1:#1b998b; --a2:#f2b134;">JO</div>
+            <h3>James Okafor</h3>
+            <div class="role">Statistics Specialist</div>
+            <p>MSc Statistics. Former data analyst who makes hypothesis testing finally click.</p>
+          </div>
+          <div class="tutor">
+            <div class="avatar" style="--a1:#8f3fd1; --a2:#e4572e;">PR</div>
+            <h3>Priya Raman</h3>
+            <div class="role">Mechanics &amp; Further Maths</div>
+            <p>MPhys graduate. Loves turning tricky force diagrams into straightforward equations.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Testimonials ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <span class="eyebrow">Results</span>
+          <h2>What our students say</h2>
+        </div>
+        <div class="grid-3">
+          <figure class="quote">
+            <blockquote>I went from a predicted C to an A in six months. Integration by parts finally makes sense!</blockquote>
+            <figcaption>Aisha K.<span>Year 13, Edexcel</span><span class="grade">C → A</span></figcaption>
+          </figure>
+          <figure class="quote">
+            <blockquote>The past-paper practice sorted by topic was a game changer. I knew exactly what to revise each week.</blockquote>
+            <figcaption>Tom W.<span>Year 13, AQA</span><span class="grade">B → A*</span></figcaption>
+          </figure>
+          <figure class="quote">
+            <blockquote>Mechanics used to terrify me. Now drawing the diagram first is second nature.</blockquote>
+            <figcaption>Leah M.<span>Year 12, OCR</span><span class="grade">D → B</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="section section--alt" id="faq">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <span class="eyebrow">FAQ</span>
+          <h2>Common questions</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>Which exam boards do you cover?</summary>
+            <p>We teach AQA, Pearson Edexcel, OCR A, OCR MEI and WJEC/Eduqas. Your tutor will use practice questions written for your specific board.</p>
+          </details>
+          <details>
+            <summary>Do you teach Further Maths?</summary>
+            <p>Yes. We offer Further Pure (complex numbers, matrices, polar coordinates, hyperbolic functions) plus Further Statistics and Further Mechanics options.</p>
+          </details>
+          <details>
+            <summary>Are lessons online or in person?</summary>
+            <p>All lessons run live online with a shared digital whiteboard. Every session is recorded so you can rewatch it while revising.</p>
+          </details>
+          <details>
+            <summary>When should I start?</summary>
+            <p>The earlier the better, but it's never too late. Many students join in Year 12 to build foundations; others join in Year 13 for focused exam preparation.</p>
+          </details>
+          <details>
+            <summary>What happens in the free trial lesson?</summary>
+            <p>You'll meet your tutor, work through a short diagnostic on key topics, and receive a written summary of strengths and areas to improve. No obligation to continue.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="cta">
+          <div>
+            <span class="eyebrow" style="color: var(--gold);">Get started</span>
+            <h2>Book your free trial lesson</h2>
+            <p>Tell us a little about yourself and we'll match you with the right tutor within 24 hours.</p>
+            <ul class="checklist">
+              <li style="color:#dfe4f0;">45-minute one-to-one session</li>
+              <li style="color:#dfe4f0;">Personalised diagnostic report</li>
+              <li style="color:#dfe4f0;">No payment details needed</li>
+            </ul>
+          </div>
+          <form class="form" action="#" method="post">
+            <div class="form-row">
+              <div>
+                <label for="name">Full name</label>
+                <input id="name" name="name" type="text" placeholder="Alex Smith" required>
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="alex@example.com" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div>
+                <label for="year">Year group</label>
+                <select id="year" name="year">
+                  <option>Year 12</option>
+                  <option>Year 13</option>
+                  <option>Resitting</option>
+                </select>
+              </div>
+              <div>
+                <label for="board">Exam board</label>
+                <select id="board" name="board">
+                  <option>AQA</option>
+                  <option>Edexcel</option>
+                  <option>OCR A</option>
+                  <option>OCR MEI</option>
+                  <option>WJEC / Eduqas</option>
+                  <option>Not sure</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <label for="message">Which topics would you like help with?</label>
+              <textarea id="message" name="message" placeholder="e.g. integration, hypothesis testing, projectiles…"></textarea>
+            </div>
+            <button type="submit" class="btn btn--light btn--block">Request free trial</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="logo"><span class="logo-mark">∑</span> Apex Maths</a>
+          <p>Expert A Level Mathematics tutoring for students who want to understand the maths — and ace the exam.</p>
+        </div>
+        <div>
+          <h4>Courses</h4>
+          <ul>
+            <li><a href="courses.html#pure">Pure Mathematics</a></li>
+            <li><a href="courses.html#stats">Statistics</a></li>
+            <li><a href="courses.html#mech">Mechanics</a></li>
+            <li><a href="courses.html#further">Further Maths</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#tutors">Our tutors</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:hello@apexmaths.example">hello@apexmaths.example</a></li>
+            <li>Mon–Fri, 4pm–9pm</li>
+            <li>Sat, 9am–1pm</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Apex Maths Tutoring</span>
+        <span>Made with HTML &amp; CSS</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
