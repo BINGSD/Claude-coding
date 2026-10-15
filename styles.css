@@ -835,3 +835,13 @@ tbody tr:hover { background: #faf9f5; }
 .cta--inline { grid-template-columns: 1fr auto; align-items: center; }
 .cta--inline p { margin: 0; }
 @media (max-width: 760px) { .cta--inline { grid-template-columns: 1fr; } }
+
+/* Demo / sample-content notice */
+.demo-note {
+  background: var(--gold);
+  color: var(--ink);
+  text-align: center;
+  font-size: .85rem;
+  font-weight: 600;
+  padding: 8px 16px;
+}
